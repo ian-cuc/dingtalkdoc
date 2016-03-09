@@ -1,0 +1,1165 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" content="一个 UI 设计语言"/>
+    <title>
+套件上架操作流程  - Ant Design
+</title>
+    <link rel="icon" href="https://img.alicdn.com/tps/TB1..zmLFXXXXb5apXXXXXXXXXX-267-267.png" type="image/x-icon">
+    <link rel="shortcut icon" href="https://img.alicdn.com/tps/TB1..zmLFXXXXb5apXXXXXXXXXX-267-267.png" type="image/x-icon">
+    
+    <link rel="stylesheet" href="../../../dist/demo.css?20160114">
+    <!--[if IE 8]>
+    <script src="https://t.alipayobjects.com/images/rmsweb/T1q8JiXftaXXXXXXXX.js"></script>
+    <![endif]-->
+    <script src="https://as.alipayobjects.com/g/component/??console-polyfill/0.2.2/index.js,es5-shim/4.1.14/es5-shim.min.js,es5-shim/4.1.14/es5-sham.min.js,html5shiv/3.7.2/html5shiv.min.js,media-match/2.0.2/media.match.min.js,jquery/1.11.3/jquery.min.js,bluebird/3.1.1/bluebird.min.js"></script>
+    <script>
+    (function() {
+      window.ANT_COMPONENTS = [];
+      window.InstantClickChangeFns = [];
+      ANT_COMPONENTS.push({
+        title: 'Pagination',
+        desc: '分页'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Affix',
+        desc: '固钉'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Badge',
+        desc: '徽标数'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Breadcrumb',
+        desc: '面包屑'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Button',
+        desc: '按钮'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Calendar',
+        desc: '日历'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Carousel',
+        desc: '走马灯'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Cascader',
+        desc: '级联选择'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Checkbox',
+        desc: '多选框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Collapse',
+        desc: '折叠面板'
+      });
+      ANT_COMPONENTS.push({
+        title: 'DatePicker',
+        desc: '日期选择框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Dropdown',
+        desc: '下拉菜单'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Form',
+        desc: '表单'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Icon',
+        desc: '图标'
+      });
+      ANT_COMPONENTS.push({
+        title: 'InputNumber',
+        desc: '数字输入框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Layout',
+        desc: '布局'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Menu',
+        desc: '导航菜单'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Message',
+        desc: '全局提示'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Modal',
+        desc: '对话框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Notification',
+        desc: '通知提醒框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Alert',
+        desc: '警告提示'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Popconfirm',
+        desc: '气泡确认框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Popover',
+        desc: '气泡卡片'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Progress',
+        desc: '进度条'
+      });
+      ANT_COMPONENTS.push({
+        title: 'QueueAnim',
+        desc: '进出场动画'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Radio',
+        desc: '单选框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Select',
+        desc: '选择器'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Slider',
+        desc: '滑动输入条'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Spin',
+        desc: '加载中'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Steps',
+        desc: '步骤条'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Switch',
+        desc: '开关'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Table',
+        desc: '表格'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Tabs',
+        desc: '标签页'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Tag',
+        desc: '标签'
+      });
+      ANT_COMPONENTS.push({
+        title: 'TimePicker',
+        desc: '时间选择框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Timeline',
+        desc: '时间轴'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Tooltip',
+        desc: '文字提示'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Transfer',
+        desc: '穿梭框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Tree',
+        desc: '树形控件'
+      });
+      ANT_COMPONENTS.push({
+        title: 'TreeSelect',
+        desc: '树选择'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Upload',
+        desc: '文件上传'
+      });
+      // fix ie location origin
+      // http://stackoverflow.com/questions/22564167/window-location-origin-gives-wrong-value-when-using-ie
+      if (!window.location.origin) {
+        window.location.origin = window.location.protocol + "//"
+          + window.location.hostname
+          + (window.location.port ? ':' + window.location.port : '');
+      }
+      var i = location.pathname.split('/').lastIndexOf('ant-design');
+      if (i > 0) {
+        window.rootUrl = location.origin + location.pathname.split('/').slice(0, 2+1).join('/');
+      } else {
+        window.rootUrl = location.origin;
+      }
+    })();
+    </script>
+    <script>
+      window.antdVersion = {
+        latest: '0.12.1'
+      };
+    </script>
+    <script src="../../../dist/demo.js?20160114"></script>
+    
+  </head>
+  <body >
+    <header id="header" class="clearfix">
+      <!--<a class="logo" href="../../..">-->
+        <!--<img width="60" src="https://img.alicdn.com/tps/TB1..zmLFXXXXb5apXXXXXXXXXX-267-267.png">-->
+        <!--开放平台文档-->
+      <!--</a>-->
+      <a class="logo" >
+        <img width="60" src="https://img.alicdn.com/tps/TB1..zmLFXXXXb5apXXXXXXXXXX-267-267.png">
+        开放平台文档
+      </a>
+      <div class="search">
+        <div id="autoComplete"></div>
+      </div>
+      <nav class="nav">
+        <span class="bar"></span>
+        <ul>
+          <!--<li class="">-->
+            <!--<a href="../../..">首页</a>-->
+          <!--</li>-->
+          <!--<li class="">-->
+            <!--<a href="../../practice/cases">实践</a>-->
+          <!--</li>-->
+          <li class="current">
+            <a href="../_overview/tab0.html">开放平台文档</a>
+          </li>
+          <!--<li class="">-->
+            <!--<a href="../../react/introduce">组件</a>-->
+          <!--</li>-->
+          <!--<li class="">-->
+            <!--<a href="../../spec/introduce">语言</a>-->
+          <!--</li>-->
+          <!--<li class="">-->
+            <!--<a href="../../resource/download">资源</a>-->
+          <!--</li>-->
+        </ul>
+      </nav>
+      <div class="nav-phone-icon"></div>
+    </header>
+    <div class="main-wrapper">
+      
+<aside class="aside-container">
+  <ul>
+      <li class="">
+        <a href="../_overview/tab0.html"
+           class="">
+          概述
+          <span class="chinese"></span>
+        </a>
+      </li>
+    <li open="open">
+      <h4>企业接入指南</h4>
+      <ul class="">
+          <li class="">
+            <a href="../_guide/tab1.html"
+               class="">
+              Step 1 -- 注册钉钉企业
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../_guide/tab2.html"
+               class="">
+              Step 2 -- 创建微应用
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../_guide/tab3.html"
+               class="">
+              Step 3 -- 开发微应用
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../_guide/tab4.html"
+               class="">
+              域名白名单
+              <span class="chinese"></span>
+            </a>
+          </li>
+      </ul>
+    </li>
+    <li open="open">
+      <h4>ISV接入指南</h4>
+      <ul class="">
+          <li class="">
+            <a href="tab1.html"
+               class="">
+              Step 1 -- 注册、认证钉钉企业账号
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="tab2.html"
+               class="">
+              Step 2 -- 成为钉钉开发者
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="tab3.html"
+               class="">
+              Step 3 -- 开发套件（微应用）
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="tab4.html"
+               class="">
+              Step 4 -- 推广套件
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="tab5.html"
+               class="">
+              ISV接入开发指南
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="current">
+            <a href="tab6.html"
+               class="">
+              套件上架操作流程
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="tab7.html"
+               class="">
+              ISV通用技术方案
+              <span class="chinese"></span>
+            </a>
+          </li>
+      </ul>
+    </li>
+    <li open="open">
+      <h4>标准规范</h4>
+      <ul class="">
+          <li class="">
+            <a href="../_standar/tab1.html"
+               class="">
+              成为ISV的必要条件
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../_standar/tab2.html"
+               class="">
+              产品标准
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../_standar/tab3.html"
+               class="">
+              技术标准
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../_standar/tab4.html"
+               class="">
+              运营标准
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../_standar/tab5.html"
+               class="">
+              上架（应用中心）标准
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../_standar/tab6.html"
+               class="">
+              附录1：质量评分细则说明
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../_standar/tab7.html"
+               class="">
+              附录2:线上故障定义表
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../_standar/tab8.html"
+               class="">
+              附录3:适配机型列表
+              <span class="chinese"></span>
+            </a>
+          </li>
+      </ul>
+    </li>
+    <li open="open">
+      <h4>免登服务</h4>
+      <ul class="">
+          <li class="">
+            <a href="../_identityverify/tab1.html"
+               class="">
+              手机客户端微应用中调用免登
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../_identityverify/tab2.html"
+               class="">
+              钉钉PC版微应用中调用免登
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../_identityverify/tab3.html"
+               class="">
+              微应用后台管理员免登
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../_identityverify/tab4.html"
+               class="">
+              普通钉钉用户账号开放及免登(暂未开放，敬请期待)
+              <span class="chinese"></span>
+            </a>
+          </li>
+      </ul>
+    </li>
+    <li open="open">
+      <h4>服务端开发文档</h4>
+      <ul class="">
+          <li class="">
+            <a href="../_server/tab1.html"
+               class="">
+              建立连接
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../_server/tab2.html"
+               class="">
+              管理通讯录
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../_server/tab3.html"
+               class="">
+              管理微应用
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../_server/tab4.html"
+               class="">
+              群会话接口
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../_server/tab5.html"
+               class="">
+              客户通讯录接口（暂未开放）
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../_server/tab6.html"
+               class="">
+              通讯录及群会话变更事件回调接口
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../_server/tab7.html"
+               class="">
+              发送普通会话消息
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../_server/tab8.html"
+               class="">
+              发送企业会话消息
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../_server/tab9.html"
+               class="">
+              消息类型及数据格式
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../_server/tab10.html"
+               class="">
+              管理多媒体文件
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../_server/tab11.html"
+               class="">
+              免登
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../_server/tab12.html"
+               class="">
+              普通钉钉用户账号开放
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../_server/tab13.html"
+               class="">
+              JS接口API
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../_server/tab14.html"
+               class="">
+              附录
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../_server/tab15.html"
+               class="">
+              Demo
+              <span class="chinese"></span>
+            </a>
+          </li>
+      </ul>
+    </li>
+    <li open="open">
+      <h4>客户端开发文档</h4>
+      <ul class="">
+          <li class="">
+            <a href="../_client/tab1.html"
+               class="">
+              Demo和调试工具
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../_client/tab2.html"
+               class="">
+              开发版钉钉客户端
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../_client/tab3.html"
+               class="">
+              通用
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../_client/tab4.html"
+               class="">
+              容器
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../_client/tab5.html"
+               class="">
+              设备
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../_client/tab6.html"
+               class="">
+              启动器
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../_client/tab7.html"
+               class="">
+              钉盘
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../_client/tab8.html"
+               class="">
+              弹窗
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../_client/tab9.html"
+               class="">
+              地图
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../_client/tab10.html"
+               class="">
+              加速器
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../_client/tab11.html"
+               class="">
+              业务
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../_client/tab12.html"
+               class="">
+              会话
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../_client/tab13.html"
+               class="">
+              Ding
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../_client/tab14.html"
+               class="">
+              电话
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../_client/tab15.html"
+               class="">
+              UI控件
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../_client/tab16.html"
+               class="">
+              企业通讯录
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../_client/tab17.html"
+               class="">
+              自定义联系人
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../_client/tab18.html"
+               class="">
+              导航栏
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../_client/tab19.html"
+               class="">
+              附录
+              <span class="chinese"></span>
+            </a>
+          </li>
+      </ul>
+    </li>
+    <li open="open">
+      <h4>PC端开发文档</h4>
+      <ul class="">
+          <li class="">
+            <a href="../_pc/tab1.html"
+               class="">
+              Demo 和调试工具
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../_pc/tab2.html"
+               class="">
+              配置展示形式
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../_pc/tab3.html"
+               class="">
+              应用设计
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../_pc/tab4.html"
+               class="">
+              通用
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../_pc/tab5.html"
+               class="">
+              弹窗
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../_pc/tab6.html"
+               class="">
+              业务
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../_pc/tab7.html"
+               class="">
+              导航
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../_pc/tab8.html"
+               class="">
+              Ding
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../_pc/tab9.html"
+               class="">
+              企业通讯录
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../_pc/tab10.html"
+               class="">
+              自定义联系人
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../_pc/tab11.html"
+               class="">
+              附录
+              <span class="chinese"></span>
+            </a>
+          </li>
+      </ul>
+    </li>
+    <li open="open">
+      <h4>性能优化</h4>
+      <ul class="">
+          <li class="">
+            <a href="../_cdn/tab1.html"
+               class="">
+              调试工具
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../_cdn/tab2.html"
+               class="">
+              H5性能优化方案
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../_cdn/tab3.html"
+               class="">
+              微应用性能评测
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../_cdn/tab4.html"
+               class="">
+              CDN服务
+              <span class="chinese"></span>
+            </a>
+          </li>
+      </ul>
+    </li>
+    <li open="open">
+      <h4>分享SDK</h4>
+      <ul class="">
+          <li class="">
+            <a href="../_share/tab1.html"
+               class="">
+              场景介绍
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../_share/tab2.html"
+               class="">
+              应用范例
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../_share/tab3.html"
+               class="">
+              渠道显示说明
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../_share/tab4.html"
+               class="">
+              分享sdk接入前准备
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../_share/tab5.html"
+               class="">
+              接入流程
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../_share/tab6.html"
+               class="">
+              Demo下载
+              <span class="chinese"></span>
+            </a>
+          </li>
+      </ul>
+    </li>
+      <li class="">
+        <a href="../_blog/tab0.html"
+           class="">
+          团队博客
+          <span class="chinese"></span>
+        </a>
+      </li>
+      <li class="">
+        <a href="../_faq/tab0.html"
+           class="">
+          FAQ
+          <span class="chinese"></span>
+        </a>
+      </li>
+  </ul>
+</aside>
+ 
+<section class="main-container">
+  <article class="markdown">
+    <h1>套件上架操作流程 </h1>
+    <div class="toc"><ul><li><a href="#第三发应用上架沟通组">第三发应用上架沟通组</a></li><li><a href="#1-云市场介绍">1. 云市场介绍</a></li><li><a href="#2-如何入驻云市场">2.如何入驻云市场</a></li><li><a href="#3-如何进行商品管理">3. 如何进行商品管理</a></li><li><a href="#4-如何进行交易管理">4. 如何进行交易管理</a></li><li><a href="#5-如何生产商品">5. 如何生产商品</a></li><li><a href="#6-线下操作">6. 线下操作</a></li><li><a href="#7-用户授权">7.  用户授权</a></li><li><a href="#8-与企业用户共创">8: 与企业用户共创</a><ul><li><a href="#8-1-背景">8.1.  背景</a></li><li><a href="#8-2-共创用户">8.2.  共创用户</a></li><li><a href="#8-3-共创结果">8.3.  共创结果</a></li></ul></li><li><a href="#9-如何进行1000家灰度">9: 如何进行1000家灰度</a><ul><li><a href="#9-1-背景">9.1.  背景</a></li><li><a href="#9-2-灰度结果">9.2.  灰度结果</a></li></ul></ul></div>
+    <h2 id="第三发应用上架沟通组">第三发应用上架沟通组<a href="#第三发应用上架沟通组" class="anchor">#</a> </h2><p>想要将开发的应用在钉钉应用中心上架，可以申请加入“第三发应用上架沟通组”，这里有详细的流程指导及公告说明，帮助您提升整体上架的效率，申请时的备注信息，请务必填写所开发的应用＋公司名，否则无法加入。点击申请加入<a href="https://t.dingtalk.com/invite/index?code=40ad61c51a"><font color=red >https://t.dingtalk.com/invite/index?code=40ad61c51a</font></a></p>
+<p>整体流程见下图：</p>
+<p><img src="https://img.alicdn.com/tps/TB1_4BELFXXXXajXFXXXXXXXXXX-800-480.jpg" alt="market_flow"></p>
+<h2 id="1-云市场介绍">1. 云市场介绍<a href="#1-云市场介绍" class="anchor">#</a> </h2><ul>
+<li>1.1 背景介绍</li>
+</ul>
+<p>钉钉应用当前依托云市场提供商品管理、交易管理的能力，为钉钉企业提供应用必须通过云市场进行商品相关的操作。</p>
+<ul>
+<li>1.2 概念定义</li>
+</ul>
+<p>名称 | 说明 </p>
+<p>------ | ----- </p>
+<p>服务商 | 云市场中的卖家，提供钉钉应用</p>
+<p>服务商入驻 | 申请成为云市场卖家的过程，需要填写信息并审核</p>
+<p>保证金 | 在云市场的卖家需要缴纳一定金额的保证金，保障服务水平和商品质量</p>
+<p>市场 | 云市场将商品进行管理、展示、交易</p>
+<p>商品 | 在云市场中进行售卖的应用</p>
+<p>商品类型 | 对商品的划分，影响商品展示属性和生产过程，当前只需关注钉钉类商品</p>
+<p>商品接入 | 部分商品由云市场进行生产，因此需要先将商品的生产信息提交到云市场进行接入</p>
+<p>订单 | 通过订单来完成商品购买的过程</p>
+<p>业务 | 订单生成的订单实例即业务，通过业务完成商品生产和交付的过程</p>
+<p>云市场API | 云市场生产时可以调用服务商提供的API，服务商完成一定的生产工作后返回结果给云市场</p>
+<ul>
+<li>1.2 整体流程</li>
+</ul>
+<p><img src="https://img.alicdn.com/tps/TB10Q8lLXXXXXbaaXXXXXXXXXXX-826-1279.png" alt="wholeProcess"></p>
+<h2 id="2-如何入驻云市场">2.如何入驻云市场<a href="#2-如何入驻云市场" class="anchor">#</a> </h2><p>入驻云市场您需要完成以下步骤 申请入驻 -&gt; 补充供应商资料 -&gt; 提交店铺资料 -&gt; 支付保证金</p>
+<ul>
+<li>2.1 申请入驻</li>
+</ul>
+<p>您可以通过<a href="http://market.aliyun.com/supplierApply"><font color=red>申请入驻</font></a></p>
+<p>查看入驻条件和提交入驻申请。</p>
+<p>云市场分为软件市场、服务市场和建站市场，不同的市场有不同的入驻条件，入驻市场后您可以在该市场发布商品。</p>
+<p>您首次入驻时，需要选择需要入驻的市场(钉钉类商品选择 软件市场)，填写信息后提交审核。</p>
+<p>当您已经入驻某个市场后，可以从此页面入驻其他市场，此时不需要重新填写资料，直接提交审核即可。</p>
+<p>您提交入驻申请后，需在 “第三发应用上架沟通组“ 的审批里面提交审核审批之后，钉钉小二将会联系您。</p>
+<p><a href="https://t.dingtalk.com/invite/index?code=40ad61c51a"><font color=red >点击加入第三发应用上架沟通组</font></a> </p>
+<ul>
+<li>2.2 补充供应商资料</li>
+</ul>
+<p>入驻成功后，您可以访问<a href="http://msp.aliyun.com/"><font color=red>服务商平台</font></a>进行操作。</p>
+<p>请在左侧菜单中点击”服务商信息”，进入服务商信息维护页面。</p>
+<p>[<font color=red>注意，供应商名称、淘宝账号、支付宝账号填写后无法修改，请慎重填写！淘宝账号、支付宝账号必须是关联关系</font>]</p>
+<ul>
+<li>2.3 提交店铺资料</li>
+</ul>
+<p>访问<a href="http://msp.aliyun.com/"><font color=red>服务商平台</font></a>，在左侧菜单中点击”店铺管理”提交店铺资料。每个服务商拥有自己的店铺，例如：<a href="http://market.aliyun.com/store/771374.html">http://market.aliyun.com/store/771374.html</a> 后续我们会开放对店铺首页进行装修的功能</p>
+<ul>
+<li>2.4 支付保证金</li>
+</ul>
+<p>为了更好地保障阿里云用户及钉钉的权益，提升云市场应用提供商的服务水平和商品质量。发布钉钉商品前，其服务商需缴纳保证金；如果服务商未缴纳保证金，其名下的商品不得上架售卖。</p>
+<p>线下布暑非钉钉市场上架商品暂时不需要缴纳保证金，以上保证金金额根据业务量变化适度调整，最终解释权归钉钉事业部所有；</p>
+<p>分类 | 保证金金额</p>
+<p>------ | ----- </p>
+<p>A、免费应用 | 5万元</p>
+<p>B、收费应用 |    </p>
+<p>累计交易额 0＜X≤500（万元） | 10万</p>
+<p>累计交易额 500＜X≤1000（万元）| 50万</p>
+<p>累计交易额 1000万元以上 | 100万</p>
+<p>保证金需按照上述表格中的规定进行缴纳。</p>
+<p>保证金缴纳方式：</p>
+<p>服务商签订《云市场服务商入驻协议》后，将指定金额的保证金汇款到以下缴纳账户，收到保证金后，联系钉钉运营小二，确认后阿里云会开具保证金收据并邮寄给服务商。</p>
+<p>保证金缴纳账号为：</p>
+<p>淘宝（中国）软件有限公司 </p>
+<p>开户行：招商银行杭州高新支行   </p>
+<p>账号：     571904478110101</p>
+<h2 id="3-如何进行商品管理">3. 如何进行商品管理<a href="#3-如何进行商品管理" class="anchor">#</a> </h2><ul>
+<li>3.1 提交商品审核</li>
+</ul>
+<p>1.请在发布商品页面选择钉钉类商品。</p>
+<p>2.填写应用钉钉类商品的接入信息。</p>
+<p><img src="https://img.alicdn.com/tps/TB1HvdzLXXXXXbLXFXXXXXXXXXX-865-283.png" alt="submitProduct"></p>
+<p>a)商品名称：请填写您的商品名称，此信息将作为商品名称直接展示给客户。</p>
+<p>b)选择套件：系统会提供从开发者平台读取到的您的钉钉套件，您可以选择一个套件作为售卖的商品。<font color=red >注意：1，此处选择套件在上架时之包含当前的微应用，如果上架后您在套件中又增加了微应用，如果需要展示给用户则需要联系钉钉小二下架后重新编辑，否则授权用户无法看到；2，如果您当前登录的阿里云账号（服务商）与开发者平台创建套件的阿里云账号不同，则这里无法进行套件选择，你需要通过填写套件id的方式进行关联</font></p>
+<p>c)主页地址：当您选择钉钉套件后，系统会自动读取，您不需要填写此地址。</p>
+<p>d)生产系统接口地址：您可以在此处录入您的生产系统接口地址，当客户购买您的商品后，云市场会调用此链接通知您的系统，以便您通过系统处理客户的请求。</p>
+<p>e)源代码地址：请您填写您的软件的源代码地址以便我们进行安全扫描，此项为非必填内容。</p>
+<p>f)填写完成后，请点击”下一步”进入商品基础信息填写页面</p>
+<p>3.填写钉钉类商品的基础信息。</p>
+<p><img src="https://img.alicdn.com/tps/TB1A_XoLXXXXXXZaXXXXXXXXXXX-865-363.png" alt="submitProduct1"></p>
+<p><img src="https://img.alicdn.com/tps/TB1lTduLXXXXXakXVXXXXXXXXXX-865-396.png" alt="submitProduct2"></p>
+<p><img src="https://img.alicdn.com/tps/TB1gE4sLXXXXXbrXVXXXXXXXXXX-865-199.png" alt="submitProduct3"></p>
+<p>a)商品图片：请上传商品列表页面和商品详情页面展示的商品图片。推荐图片大小为160*120像素。</p>
+<p>b)商品介绍：请填写您的商品简介，此信息将在云市场的商品列表页面进行展示，建议字数控制在100字以内。</p>
+<p>c)商品详情：请填写您商品的详细介绍信息，此信息将在商品详情页面进行展示，建议尽量详情得描述您的商品。</p>
+<p>d)成功案例：可以填写您的商品的成功案例，此信息将在商品详情页面进行展示，可以不填写。</p>
+<p>e)app展示图片：您可以上传在app端展示的商品图片。</p>
+<p>f)填写完成后，请点击”下一步”进入商品业务信息填写页面。</p>
+<p>4.填写钉钉类商品的业务信息。</p>
+<p><img src="https://img.alicdn.com/tps/TB1PMNHLXXXXXb8XpXXXXXXXXXX-865-210.png" alt="submitProductBiz"></p>
+<p>a)商品所属类目：请填写您将商品放在哪个类目下，此选项会影响用户搜索商品时在哪个类目下进行展现。同时，当您选择类目后，系统会显示该类目的商品特有的一些属性，您可以根据实际情况填写属性信息，如果您的商品不包含该属性也可以不进行填写。</p>
+<p>b)填写完成后，请点击”下一步”进入商品销售信息填写页面。</p>
+<p>5.填写钉钉类商品的销售信息。</p>
+<p><img src="https://img.alicdn.com/tps/TB1vcJHLXXXXXb0XpXXXXXXXXXX-865-305.png" alt="submitProductSel1"></p>
+<p><img src="https://img.alicdn.com/tps/TB1cbFjLXXXXXcSaXXXXXXXXXXX-844-303.png" alt="submitProductSel2"></p>
+<p>a)售卖方式：钉钉类商品支持按次售卖或按周期售卖。</p>
+<p>b)商品版本名称：请填写售卖的版本名称，在商品页面会显示在上图红框处的位置。一个商品可添加多个版本并设置不同价格。</p>
+<p>c)商品定价：    </p>
+<p>如果选择按次售卖，则请设置商品单次价格。    </p>
+<p>如果选择按周期售卖，则需要设置允许订购的周期，新购价格，续费价格。新购、续费价格以单月为基价，不同订购周期的价格为基价*订购周期的月份数。如果需要设置优惠，请联系小二操作。</p>
+<p>d)填写完成后，请点击”提交”。提交后商品会进入审核流程。</p>
+<p>6.钉钉类商品Sku Code</p>
+<p>如果您的钉钉类商品需要版本对应的Sku Code，请提交商品信息后，在商品列表页面点击”管理”。进入商品详情页面后，点击”销售信息”tab，在下图位置可以查看版本对应的Sku Code。</p>
+<p><img src="https://img.alicdn.com/tps/TB1Ts0RLXXXXXbgXXXXXXXXXXXX-865-460.png"  alt="图片名称" align=right /></p>
+<ul>
+<li>3.2 查看商品</li>
+</ul>
+<p>您可以在<a href="http://msp.aliyun.com/commodity/manage/index"><font color=red>服务商平台</font></a>左侧菜单中商品管理查看您的商品。</p>
+<p>您可以通过商品的上架状态和审核状态对商品进行筛选，并且可以通过列表进入商品详情页面进行商品管理。</p>
+<p><img src="https://img.alicdn.com/tps/TB1R44FLXXXXXc1XpXXXXXXXXXX-865-284.png" alt="viewProduct"></p>
+<ul>
+<li>3.3 查看审核</li>
+</ul>
+<p>提交商品后，小二会针对商品进行审核。在审核之前您需要完成10家企业共创，<a href="#8-与企业用户共创"><font color=red >与企业用户共创</font></a>；</p>
+<p>共创完成之后进行<a href="#9-如何进行1000家灰度"><font color=red >如何进行1000家灰度</font></a>；</p>
+<p>商品审核分为两个阶段：商品接入审核、商品售卖信息审核。</p>
+<p>商品接入审核：</p>
+<p>小二会先对商品的接入信息进行审核，如果审核通过，则开始进行售卖信息审核。如果接入信息审核驳回，您可以在商品列表中看到商品审核状态为驳回，并且查看驳回原因。您可以编辑商品信息，重新提交审核。</p>
+<p>商品售卖信息审核：</p>
+<p>完成商品接入审核后，小二会进行商品售卖信息的审核。</p>
+<p>如果售卖信息审核驳回，您可以在商品列表中看到商品审核状态为驳回，并且查看驳回原因。</p>
+<p>您可以编辑商品的售卖信息，重新提交审核。(此时不能修改商品接入信息。)</p>
+<p>如果售卖信息审核通过，商品会自动上架。</p>
+<ul>
+<li>3.4 编辑商品</li>
+</ul>
+<p>您的商品审核通过上架后，您可以在商品详情页面编辑商品信息。</p>
+<p><img src="https://img.alicdn.com/tps/TB1y4FVLXXXXXXfXXXXXXXXXXXX-865-179.png" alt="updateProduct"></p>
+<p>切换不同的tab页面，点击”编辑”按钮进入编辑状态。</p>
+<p>商品的接入信息修改后，需要小二重新进行审核。审核通过后，会将显示给用户的信息自动更新。</p>
+<p>商品的基本信息、业务信息和销售信息修改后，不需要经过小二审核，会直接影响前台展示的内容。</p>
+<ul>
+<li>3.5 下架商品</li>
+</ul>
+<p>如果您的商品已经上架，需要进行下架，请联系小二进行操作。</p>
+<p>您的商品下架后，您可以在商品列表中点击”继续发布”，重新提交审核。</p>
+<h2 id="4-如何进行交易管理">4. 如何进行交易管理<a href="#4-如何进行交易管理" class="anchor">#</a> </h2><ul>
+<li>4.1 订单管理</li>
+</ul>
+<p>您可以在<a href="http://msp.aliyun.com/order/order_list.htm"><font color=red>服务商平台</font></a>左侧菜单中交易管理-订单管理查看订单信息</p>
+<p><img src="https://img.alicdn.com/tps/TB1wvXFLXXXXXc8XpXXXXXXXXXX-465-387.png" alt="orderManage"></p>
+<p>您可以通过订单ID、客户ID、订单状态等条件查询订单。在”操作”栏，点击”查看”可以查看订单详细信息。</p>
+<p><img src="https://img.alicdn.com/tps/TB1fI4yLXXXXXc_XFXXXXXXXXXX-865-396.png" alt="orderManage1"></p>
+<p>在订单还未支付前，可以点击”订单改价”修改订单的支付价格。在支付价格中填入金额，填写修改原因，点击”提交”，可以将订单的支付价格修改为您填写的金额。</p>
+<p><img src="https://img.alicdn.com/tps/TB1GetsLXXXXXbJXVXXXXXXXXXX-865-257.png" alt="orderManage2"></p>
+<p>在订单支付后，可以点击”关联业务”查看订单生成的业务实例。您也可以从业务管理菜单中直接查看业务信息。</p>
+<ul>
+<li>4.2 业务管理</li>
+</ul>
+<p>您可以在<a href="http://msp.aliyun.com/orderbiz/order_biz_list.htm"><font color=red>服务商平台</font></a>左侧菜单中交易管理-业务管理查看业务信息</p>
+<p><img src="https://img.alicdn.com/tps/TB1eUhwLXXXXXXQXVXXXXXXXXXX-865-376.png" alt="bizManage"></p>
+<p>您可以通过业务ID、客户ID、业务状态等条件查询业务。在”操作”栏，点击”查看”可以查看业务详细信息。</p>
+<p>在业务详细信息中，可以在”补充页面信息”栏中填写您对业务的备注，并且在列表页面可以根据这个信息进行搜索。</p>
+<p><img src="https://img.alicdn.com/tps/TB1yXXNLXXXXXXKXpXXXXXXXXXX-865-144.png" alt="bizStatusManage"></p>
+<p>钉钉类商品的业务状态</p>
+<pre>    开通中
+
+    已开通
+
+    已过期
+
+    已关闭
+
+
+
+</pre><p>对于钉钉类型商品，如果状态是开通中，可以点击”开通应用”来手动开通。</p>
+<p><img src="https://img.alicdn.com/tps/TB1ynxtLXXXXXa1XVXXXXXXXXXX-865-133.png"  alt="图片名称" align=right /></p>
+<ul>
+<li>4.3 退款管理</li>
+</ul>
+<p>您可以在<a href="http://msp.aliyun.com/refund/refund_record_list.htm"><font color=red>服务商平台</font></a>左侧菜单中交易管理-退款管理查看退款信息。</p>
+<p><img src="https://img.alicdn.com/tps/TB1zoJJLXXXXXaeXpXXXXXXXXXX-865-250.png" alt="refundManage"></p>
+<p>用户购买的商品，在交易担保期内，可以享受不满意全额退款。详细规则请参考<a href="http://help.aliyun.com/knowledge_detail/6555340.html">http://help.aliyun.com/knowledge_detail/6555340.html</a></p>
+<p>用户申请退款后，您可以在退款管理中查看到退款申请。</p>
+<p>您可以通过申请人、退款状态等条件查询退款申请。在”操作”栏，点击”查看”可以查看退款详细信息。</p>
+<p>退款状态:</p>
+<p>审核中： 用户提交退款申请，需要服务商进行审核</p>
+<p>已取消：用户取消了提交的退款申请</p>
+<p>退款中：服务商同意退款申请，系统进行退款中</p>
+<p>退款成功：已经成功进行退款</p>
+<p>审核不通过：服务商驳回了用户的退款申请</p>
+<p>审核中的退款申请，您可以在退款申请的详情页面进行审核通过或者审核驳回。</p>
+<p>如果您不处理用户的退款申请，3个自然日后系统会自动通过退款申请。</p>
+<ul>
+<li>4.4 评价管理</li>
+</ul>
+<p>您可以在<a href="http://msp.aliyun.com/orderrate/index.htm"><font color=red>服务商平台</font></a>左侧菜单中买家评价管理查看和回复用户对商品的评价。</p>
+<p><img src="https://img.alicdn.com/tps/TB17JxrLXXXXXcPXVXXXXXXXXXX-865-383.png" alt="evaluateManage"></p>
+<p>您可以通过客户ID、商品名称、回复状态等条件查询用户回复。</p>
+<p>用户可以对交易进行一次初评和一次追评，您可以分别针对初评和追评进行回复。用户的评价信息和您的回复都会显示在商品详情下方。</p>
+<ul>
+<li>4.5 客户管理</li>
+</ul>
+<p>您可以在<a href="http://msp.aliyun.com/orderrate/index.htm"><font color=red>服务商平台</font></a>左侧菜单中客户管理查看购买了您商品的客户。</p>
+<p><img src="https://img.alicdn.com/tps/TB1kHlULXXXXXX8XXXXXXXXXXXX-865-360.png" alt="customersManage"></p>
+<p>您可以通过客户ID、客户名称、联系方式来查找客户。在操作栏点击”关联产品”可以查看这个客户购买的业务。</p>
+<h2 id="5-如何生产商品">5. 如何生产商品<a href="#5-如何生产商品" class="anchor">#</a> </h2><p>钉钉类型的商品的生产过程：</p>
+<p>商品类型 | 生产/服务过程</p>
+<p>------ | ----- </p>
+<p>钉钉类商品     | 需要先通过钉钉验收，审核上架后，用户购买商品进行授权开通，ISV应用接收授权信息后立即开通</p>
+<ul>
+<li>5.1 ISV接入API</li>
+</ul>
+<p>ISV通过接入API实现用户购买、续费、商品过期信息的处理，通过购买时云市场传入的corpid与钉钉企业进行关联，实现开通时的企业绑定；通过续费接口实现对钉钉企业商品有效期的管理；通过商品过期接口实现对应用内企业数据的导出、备份等操作</p>
+<p>接口调试工具：<a href="http://msp.aliyun.com/isvDoc">http://msp.aliyun.com/isvDoc</a>  ISV需要使用用MSP的帐号登陆进行调试</p>
+<p>接口说明：<a href="http://gongdan.oss-cn-hangzhou.aliyuncs.com/market/%E4%BA%91%E5%B8%82%E5%9C%BA%E5%95%86%E5%93%81%E6%8E%A5%E5%85%A5%E6%96%87%E6%A1%A3.zip?spm=5176.776672277.0.0.EFfNfS&amp;file=%E4%BA%91%E5%B8%82%E5%9C%BA%E5%95%86%E5%93%81%E6%8E%A5%E5%85%A5%E6%96%87%E6%A1%A3.zip"><font color=red>云市场商品接入API文档</font></a></p>
+<h2 id="6-线下操作">6. 线下操作<a href="#6-线下操作" class="anchor">#</a> </h2><ul>
+<li>6.1 结算收款</li>
+</ul>
+<p>次月底前阿里云为ISV结算上月全部交易额</p>
+<ul>
+<li>6.2 开据发票</li>
+</ul>
+<p>ISV开全额发票给企业用户</p>
+<ul>
+<li>6.3 线下退款</li>
+</ul>
+<p>ISV可与企业用户协商进行线下退款</p>
+<h2 id="7-用户授权">7.  用户授权<a href="#7-用户授权" class="anchor">#</a> </h2><p>当企业管理员通过云市场完成套件购买后，通过钉钉授权功能进行钉钉套件授权开通，具体授权开通流程见：</p>
+<p><a href="#企业管理员授权应用"><font color=red >企业管理员授权应用</font></a></p>
+<h2 id="8-与企业用户共创">8: 与企业用户共创<a href="#8-与企业用户共创" class="anchor">#</a> </h2><h3 id="8-1-背景">8.1.  背景<a href="#8-1-背景" class="anchor">#</a> </h3><p>您的套件开发好之后需要与企业用户一起共创，通过与企业用户共创来检验您的套件是否满足企业用户全面使用以及用户对套件的认可度。</p>
+<h3 id="8-2-共创用户">8.2.  共创用户<a href="#8-2-共创用户" class="anchor">#</a> </h3><p>共创用户需要包含isv老用户、2家钉钉老用户。</p>
+<ul>
+<li><p>ISV老用户可以通过在企业用户的钉钉OA后台添加微应用的方式进行开通</p>
+</li>
+<li><p>2家钉钉老用户isv可申请加入钉钉用户社区，在社区中寻找共创用户。<a href="https://t.dingtalk.com/invite/index?code=1813c728e5"><font color=red>申请加入钉钉用户社区</font></a></p>
+</li>
+</ul>
+<h3 id="8-3-共创结果">8.3.  共创结果<a href="#8-3-共创结果" class="anchor">#</a> </h3><p>共创周期：一周</p>
+<p>在共创过程中，钉钉会重点关注以下数据：</p>
+<p>①活跃企业数/添加应用的企业数&gt;70%；</p>
+<p>②DAU/WAU&gt;50%；</p>
+<p>③用户满意度评分高于90分。(钉钉小二会对共创企业发起用户满意度调查)</p>
+<p>同时在共创用户使用过程中，钉钉官方会对应用质量进行在线检测及bug记录评分。评分将影响应用等级，应用等级将决定在钉钉应用市场的排名。</p>
+<p>应用（套件）达到共创用户用起来及质量评分80分以上，即可开始1000家灰度内测阶段。</p>
+<h2 id="9-如何进行1000家灰度">9: 如何进行1000家灰度<a href="#9-如何进行1000家灰度" class="anchor">#</a> </h2><h3 id="9-1-背景">9.1.  背景<a href="#9-1-背景" class="anchor">#</a> </h3><p>经过10家企业用户的共创，您的套件满足ISV老用户的使用，同时满足了钉钉老用户的使用，此时已经说明您的套件满足了企业用户的使用需求，为进一步验证套件的稳定性与可用性，将开启一周的1000家企业用户灰度，将根据灰度结果进行进一步用户开放</p>
+<h3 id="9-2-灰度结果">9.2.  灰度结果<a href="#9-2-灰度结果" class="anchor">#</a> </h3><p>灰度成功的标准（可根据应用类型进行协商调整）：</p>
+<p>①活跃企业数/添加应用的企业数&gt;50%；</p>
+<p>②DAU/WAU&gt;25%；</p>
+<p>③用户满意度评分高于80分。</p>
+<p>同时在共创用户使用过程中，钉钉官方会对应用质量进行在线检测及bug记录评分。评分将影响应用等级，应用等级将决定在钉钉应用市场的排名。应用（套件）达到共创用户用起来及质量评分80分以上，即可申请审核通过。</p>
+
+  </article>
+</section>
+
+    </div><footer id="footer">
+  <ul>
+    <li>
+      <h2>GitHub</h2>
+      <a target="_blank "href="https://github.com/ant-design/ant-design">仓库</a>
+      <a target="_blank" href="https://github.com/ant-design/antd-init">脚手架</a>
+      <a target="_blank" href="http://ant-tool.github.io/">开发工具</a>
+    </li>
+    <li>
+      <h2>关于我们</h2>
+      <a target="_blank" href="https://open.dingtalk.com">钉钉开放平台</a>
+    </li>
+    <li>
+      <h2>联系我们</h2>
+      <a target="_blank" href="https://github.com/ant-design/ant-design/issues">反馈和建议</a>
+      <a target="_blank" href="https://gitter.im/ant-design/ant-design">讨论</a>
+      <a target="_blank" href="http://dwz.cn/2AF9ao">报告 Bug</a>
+    </li>
+    <li>
+      <div>©2015 蚂蚁金服体验技术部出品</div>
+      <div>文档版本：<span id="versions-select"></span></div>
+    </li>
+  </ul>
+</footer>
+    <script data-no-instant>
+    if (!location.port) {
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-72788897-1', 'auto');
+      ga('send', 'pageview');
+      InstantClick.on('change', function() {
+        ga('send', 'pageview', location.pathname + location.search);
+      });
+    }
+    </script>
+    <script data-no-instant>
+      InstantClick.on('change', function() {
+        InstantClickChangeFns.forEach(function(fn) {
+          fn();
+        });
+      });
+      InstantClick.init();
+    </script>
+  </body>
+</html>

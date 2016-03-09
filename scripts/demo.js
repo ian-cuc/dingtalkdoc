@@ -438,6 +438,23 @@ InstantClickChangeFns.push(function() {
       }
       this.getUrlNum();
       this.addTitleEvent();
+
+      for (var i = 0; i < this.listBox.find("h4").length; i++) {
+        var title = this.listBox.find("h4").eq(i);
+        var parent = $(title).parent(),
+          list=parent.find("ul");//小标题列表
+        if (parent.attr("open") ) {
+          if (this.num != parent.index()){
+            parent.removeAttr("open");
+            list.animate({marginTop: -list.height()}, 1000, "easeInOutCirc", function () {
+              list.css({"display": "none"})
+            })
+            //list.css({"display": "none", marginTop: -list.height()});
+          }
+        }
+      }
+
+
     },
     getUrlNum: function() {
       var self = this,
@@ -449,6 +466,7 @@ InstantClickChangeFns.push(function() {
           self.num = m.parent().parent().parent().index();
         }
       }
+      //alert(self.num);
     },
     addTitleEvent: function() {
       var self = this;

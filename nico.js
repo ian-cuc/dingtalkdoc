@@ -40,7 +40,7 @@ exports.package = package;
 exports.theme = 'site';
 exports.source = process.cwd();
 exports.output = path.join(process.cwd(), '_site');
-exports.permalink = '{{directory}}/{{filename}}';
+exports.permalink = '{{directory}}/{{filename}}.html';
 exports.antdCssUrl = '../dist/' + package.name + '-' + package.version + exports.minimized + '.css';
 exports.antdJsUrl = '../dist/' + package.name + '-' + package.version + exports.minimized + '.js';
 

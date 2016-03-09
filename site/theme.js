@@ -111,6 +111,20 @@ module.exports = function(nico) {
           b = cats.indexOf(b.name);
           return a - b;
         });
+        categories = categories.sort(function(a, b) {
+          var cats = ['风格', '动画', '模式', '资源'];
+          a = cats.indexOf(a.name);
+          b = cats.indexOf(b.name);
+          return a - b;
+        });
+        categories = categories.sort(function(a, b) {
+          var cats = ['1','企业接入指南', 'ISV接入指南', '标准规范', '免登服务', '服务端开发文档', '客户端开发文档', 'PC端开发文档', '性能优化', '分享SDK','2','团队博客','3'];
+          a = cats.indexOf(a.name);
+          b = cats.indexOf(b.name);
+          return a - b;
+        });
+
+
       }
       Categories[cacheKey] = categories;
       return categories;

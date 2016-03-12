@@ -45,13 +45,18 @@ module.exports = function(nico) {
 
   exports.filters = {
     find_category: function(posts, cats) {
-      if (typeof cats === 'string') {
-        cats = [cats];
-      }
+      //if (typeof cats === 'string') {
+      //  cats = [cats];
+      //}
       var ret = [];
+      var cat;
       getAllPosts(posts).forEach(function(post) {
-        if (cats.indexOf(post.meta.category) >= 0) {
-          ret.push(post);
+        for( i = 0;i < cats.length; i++)
+        {
+          cat = cats[i];
+          if (cat.indexOf(post.meta.category) >= 0) {
+            ret.push(post);
+          }
         }
       });
       ret = ret.sort(function(a, b) {

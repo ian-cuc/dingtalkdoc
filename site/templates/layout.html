@@ -21,10 +21,10 @@
     (function() {
       window.ANT_COMPONENTS = [];
       window.InstantClickChangeFns = [];
-      {%- for item in resource.pages|find_category(["CSS","Components"]) %}
+      {%- for item in resource.pages|find_category(['企业接入指南','免登服务','服务端开发文档','客户端开发文档','PC端开发文档','性能优化','分享SDK','团队博客']) %}
       ANT_COMPONENTS.push({
         title: '{{item.title}}',
-        desc: '{{item.meta.chinese}}'
+        url: '{{permalink_url(item)}}'
       });
       {%- endfor %}
       // fix ie location origin

@@ -73,20 +73,30 @@ InstantClickChangeFns.push(function () {
       return searchData.map(function (s) {
         return <Option sData={s} key={s.title} text={'跳转到 ' + s.title}>
           <strong>{s.title}</strong>
-          &nbsp;
-          <span className="ant-component-decs">{s.desc}</span>
         </Option>;
       });
     },
 
     handleSelect(value) {
-      location.href = rootUrl + '/components/' + value.replace(/([a-z])([A-Z])/g, function (m, m1, m2) {
+      var url;
+      for(var i=0;i<searchData.length;i++){
+        if(searchData[i].title === value ){
+          url = searchData[i].url;
+          break;
+        }
+      }
+      alert(url);
+      //location.href = rootUrl + '/_site/docs/pattern/' + url.replace(/([a-z])([A-Z])/g, function (m, m1, m2) {
+      //    return m1 + '-' + m2;
+      //  }).toLowerCase();
+      location.href = url.replace(/([a-z])([A-Z])/g, function (m, m1, m2) {
           return m1 + '-' + m2;
-        }).toLowerCase() + '/';
+        }).toLowerCase();
+
     },
 
     filterOption(input, option) {
-      return option.props.sData.title.toLowerCase().indexOf(input.toLowerCase()) !== -1 || option.props.sData.desc.indexOf(input) !== -1;
+      return option.props.sData.title.indexOf(input) !== -1 ;
     },
 
     render() {

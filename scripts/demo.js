@@ -73,20 +73,30 @@ InstantClickChangeFns.push(function () {
       return searchData.map(function (s) {
         return <Option sData={s} key={s.title} text={'跳转到 ' + s.title}>
           <strong>{s.title}</strong>
-          &nbsp;
-          <span className="ant-component-decs">{s.desc}</span>
         </Option>;
       });
     },
 
     handleSelect(value) {
-      location.href = rootUrl + '/components/' + value.replace(/([a-z])([A-Z])/g, function (m, m1, m2) {
+      var url;
+      for(var i=0;i<searchData.length;i++){
+        if(searchData[i].title === value ){
+          url = searchData[i].url;
+          break;
+        }
+      }
+      alert(url);
+      //location.href = rootUrl + '/_site/docs/pattern/' + url.replace(/([a-z])([A-Z])/g, function (m, m1, m2) {
+      //    return m1 + '-' + m2;
+      //  }).toLowerCase();
+      location.href = url.replace(/([a-z])([A-Z])/g, function (m, m1, m2) {
           return m1 + '-' + m2;
-        }).toLowerCase() + '/';
+        }).toLowerCase();
+
     },
 
     filterOption(input, option) {
-      return option.props.sData.title.toLowerCase().indexOf(input.toLowerCase()) !== -1 || option.props.sData.desc.indexOf(input) !== -1;
+      return option.props.sData.title.indexOf(input) !== -1 ;
     },
 
     render() {
@@ -94,7 +104,7 @@ InstantClickChangeFns.push(function () {
                      onSelect={this.handleSelect}
                      optionLabelProp="text"
                      dropdownClassName="autoComplete"
-                     searchPlaceholder="搜索组件..."
+                     searchPlaceholder="搜索..."
                      filterOption={this.filterOption}>{this.getOptions()}</Select>;
     }
   });
@@ -103,34 +113,34 @@ InstantClickChangeFns.push(function () {
 });
 
 InstantClickChangeFns.push(function () {
-  var Select = antd.Select;
-  var Option = Select.Option;
-  var versionsHistory = {
-    '0.9.x': '09x.ant.design',
-    '0.10.x': '010x.ant.design',
-    '0.11.x': '011x.ant.design',
-  };
-  versionsHistory[antdVersion.latest] =
-    versionsHistory[antdVersion.latest] || 'ant.design';
-  var versions = Object.keys(versionsHistory).sort(function (a, b) {
-    return semver.lt(a.replace('.x', '.0'), b.replace('.x', '.0'));
-  });
-  var options = versions.map(function (version) {
-    var link = versionsHistory[version];
-    return <Option key={version} value={version}>{version}</Option>;
-  });
-
-  function onChange(value) {
-    if (versionsHistory[value]) {
-      location.href = location.href.replace(location.host, versionsHistory[value]);
-    }
-  }
-
-  ReactDOM.render(
-    <Select defaultValue={antdVersion.latest} size="small"
-            dropdownMatchSelectWidth={false}
-            onChange={onChange}>{options}</Select>
-    , document.getElementById('versions-select'));
+  //var Select = antd.Select;
+  //var Option = Select.Option;
+  //var versionsHistory = {
+  //  '0.9.x': '09x.ant.design',
+  //  '0.10.x': '010x.ant.design',
+  //  '0.11.x': '011x.ant.design',
+  //};
+  //versionsHistory[antdVersion.latest] =
+  //  versionsHistory[antdVersion.latest] || 'ant.design';
+  //var versions = Object.keys(versionsHistory).sort(function (a, b) {
+  //  return semver.lt(a.replace('.x', '.0'), b.replace('.x', '.0'));
+  //});
+  //var options = versions.map(function (version) {
+  //  var link = versionsHistory[version];
+  //  return <Option key={version} value={version}>{version}</Option>;
+  //});
+  //
+  //function onChange(value) {
+  //  if (versionsHistory[value]) {
+  //    location.href = location.href.replace(location.host, versionsHistory[value]);
+  //  }
+  //}
+  //
+  //ReactDOM.render(
+  //  <Select defaultValue={antdVersion.latest} size="small"
+  //          dropdownMatchSelectWidth={false}
+  //          onChange={onChange}>{options}</Select>
+  //  , document.getElementById('versions-select'));
 });
 
 window.BrowserDemo = React.createClass({
@@ -411,7 +421,7 @@ InstantClickChangeFns.push(function() {
     highlightCurrentNav: function(target) {
       target = target || this.navList.eq(this.navNum);
       this.navBar && this.navBar.css({
-        left: target.position().left,
+        //left: target.position().left,
         width: target.outerWidth()
       });
     },

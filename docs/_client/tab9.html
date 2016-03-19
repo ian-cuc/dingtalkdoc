@@ -1,0 +1,1259 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" content="一个 UI 设计语言"/>
+    <title>
+地图  - Ant Design
+</title>
+    <link rel="icon" href="https://img.alicdn.com/tps/TB1..zmLFXXXXb5apXXXXXXXXXX-267-267.png" type="image/x-icon">
+    <link rel="shortcut icon" href="https://img.alicdn.com/tps/TB1..zmLFXXXXb5apXXXXXXXXXX-267-267.png" type="image/x-icon">
+    
+    <link rel="stylesheet" href="../../dist/demo.css?20160114">
+    <!--[if IE 8]>
+    <script src="https://t.alipayobjects.com/images/rmsweb/T1q8JiXftaXXXXXXXX.js"></script>
+    <![endif]-->
+    <script src="https://as.alipayobjects.com/g/component/??console-polyfill/0.2.2/index.js,es5-shim/4.1.14/es5-shim.min.js,es5-shim/4.1.14/es5-sham.min.js,html5shiv/3.7.2/html5shiv.min.js,media-match/2.0.2/media.match.min.js,jquery/1.11.3/jquery.min.js,bluebird/3.1.1/bluebird.min.js"></script>
+    <script>
+    (function() {
+      window.ANT_COMPONENTS = [];
+      window.InstantClickChangeFns = [];
+      ANT_COMPONENTS.push({
+        title: 'Demo 和调试工具',
+        url: '../_pc/tab1.html'
+      });
+      ANT_COMPONENTS.push({
+        title: '调试工具',
+        url: '../_cdn/tab1.html'
+      });
+      ANT_COMPONENTS.push({
+        title: '场景介绍',
+        url: '../_share/tab1.html'
+      });
+      ANT_COMPONENTS.push({
+        title: '建立连接',
+        url: '../_server/tab1.html'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Demo和调试工具',
+        url: 'tab1.html'
+      });
+      ANT_COMPONENTS.push({
+        title: '手机客户端微应用中调用免登',
+        url: '../_identityverify/tab1.html'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Step 1 -- 注册钉钉企业',
+        url: '../_guide/tab1.html'
+      });
+      ANT_COMPONENTS.push({
+        title: '配置展示形式',
+        url: '../_pc/tab2.html'
+      });
+      ANT_COMPONENTS.push({
+        title: '应用范例',
+        url: '../_share/tab2.html'
+      });
+      ANT_COMPONENTS.push({
+        title: '开发版钉钉客户端',
+        url: 'tab2.html'
+      });
+      ANT_COMPONENTS.push({
+        title: 'H5性能优化方案',
+        url: '../_cdn/tab2.html'
+      });
+      ANT_COMPONENTS.push({
+        title: '钉钉PC版微应用中调用免登',
+        url: '../_identityverify/tab2.html'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Step 2 -- 创建微应用',
+        url: '../_guide/tab2.html'
+      });
+      ANT_COMPONENTS.push({
+        title: '管理通讯录',
+        url: '../_server/tab2.html'
+      });
+      ANT_COMPONENTS.push({
+        title: '管理微应用',
+        url: '../_server/tab3.html'
+      });
+      ANT_COMPONENTS.push({
+        title: '应用设计',
+        url: '../_pc/tab3.html'
+      });
+      ANT_COMPONENTS.push({
+        title: '微应用后台管理员免登',
+        url: '../_identityverify/tab3.html'
+      });
+      ANT_COMPONENTS.push({
+        title: '微应用性能评测',
+        url: '../_cdn/tab3.html'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Step 3 -- 开发微应用',
+        url: '../_guide/tab3.html'
+      });
+      ANT_COMPONENTS.push({
+        title: '渠道显示说明',
+        url: '../_share/tab3.html'
+      });
+      ANT_COMPONENTS.push({
+        title: '通用',
+        url: 'tab3.html'
+      });
+      ANT_COMPONENTS.push({
+        title: '通用',
+        url: '../_pc/tab4.html'
+      });
+      ANT_COMPONENTS.push({
+        title: '域名白名单',
+        url: '../_guide/tab4.html'
+      });
+      ANT_COMPONENTS.push({
+        title: 'CDN服务',
+        url: '../_cdn/tab4.html'
+      });
+      ANT_COMPONENTS.push({
+        title: '群会话接口',
+        url: '../_server/tab4.html'
+      });
+      ANT_COMPONENTS.push({
+        title: '普通钉钉用户账号开放及免登(暂未开放，敬请期待)',
+        url: '../_identityverify/tab4.html'
+      });
+      ANT_COMPONENTS.push({
+        title: '容器',
+        url: 'tab4.html'
+      });
+      ANT_COMPONENTS.push({
+        title: '分享sdk接入前准备',
+        url: '../_share/tab4.html'
+      });
+      ANT_COMPONENTS.push({
+        title: '接入流程',
+        url: '../_share/tab5.html'
+      });
+      ANT_COMPONENTS.push({
+        title: '弹窗',
+        url: '../_pc/tab5.html'
+      });
+      ANT_COMPONENTS.push({
+        title: '客户通讯录接口（暂未开放）',
+        url: '../_server/tab5.html'
+      });
+      ANT_COMPONENTS.push({
+        title: '设备',
+        url: 'tab5.html'
+      });
+      ANT_COMPONENTS.push({
+        title: '业务',
+        url: '../_pc/tab6.html'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Demo下载',
+        url: '../_share/tab6.html'
+      });
+      ANT_COMPONENTS.push({
+        title: '通讯录及群会话变更事件回调接口',
+        url: '../_server/tab6.html'
+      });
+      ANT_COMPONENTS.push({
+        title: '启动器',
+        url: 'tab6.html'
+      });
+      ANT_COMPONENTS.push({
+        title: '钉盘',
+        url: 'tab7.html'
+      });
+      ANT_COMPONENTS.push({
+        title: '发送普通会话消息',
+        url: '../_server/tab7.html'
+      });
+      ANT_COMPONENTS.push({
+        title: '导航',
+        url: '../_pc/tab7.html'
+      });
+      ANT_COMPONENTS.push({
+        title: '弹窗',
+        url: 'tab8.html'
+      });
+      ANT_COMPONENTS.push({
+        title: '发送企业会话消息',
+        url: '../_server/tab8.html'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Ding',
+        url: '../_pc/tab8.html'
+      });
+      ANT_COMPONENTS.push({
+        title: '消息类型及数据格式',
+        url: '../_server/tab9.html'
+      });
+      ANT_COMPONENTS.push({
+        title: '企业通讯录',
+        url: '../_pc/tab9.html'
+      });
+      ANT_COMPONENTS.push({
+        title: '地图',
+        url: 'tab9.html'
+      });
+      ANT_COMPONENTS.push({
+        title: '管理多媒体文件',
+        url: '../_server/tab10.html'
+      });
+      ANT_COMPONENTS.push({
+        title: '加速器',
+        url: 'tab10.html'
+      });
+      ANT_COMPONENTS.push({
+        title: '自定义联系人',
+        url: '../_pc/tab10.html'
+      });
+      ANT_COMPONENTS.push({
+        title: '业务',
+        url: 'tab11.html'
+      });
+      ANT_COMPONENTS.push({
+        title: '附录',
+        url: '../_pc/tab11.html'
+      });
+      ANT_COMPONENTS.push({
+        title: '免登',
+        url: '../_server/tab11.html'
+      });
+      ANT_COMPONENTS.push({
+        title: '普通钉钉用户账号开放',
+        url: '../_server/tab12.html'
+      });
+      ANT_COMPONENTS.push({
+        title: '会话',
+        url: 'tab12.html'
+      });
+      ANT_COMPONENTS.push({
+        title: 'JS接口API',
+        url: '../_server/tab13.html'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Ding',
+        url: 'tab13.html'
+      });
+      ANT_COMPONENTS.push({
+        title: '附录',
+        url: '../_server/tab14.html'
+      });
+      ANT_COMPONENTS.push({
+        title: '电话',
+        url: 'tab14.html'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Demo',
+        url: '../_server/tab15.html'
+      });
+      ANT_COMPONENTS.push({
+        title: 'UI控件',
+        url: 'tab15.html'
+      });
+      ANT_COMPONENTS.push({
+        title: '企业通讯录',
+        url: 'tab16.html'
+      });
+      ANT_COMPONENTS.push({
+        title: '自定义联系人',
+        url: 'tab17.html'
+      });
+      ANT_COMPONENTS.push({
+        title: '导航栏',
+        url: 'tab18.html'
+      });
+      ANT_COMPONENTS.push({
+        title: '附录',
+        url: 'tab19.html'
+      });
+      // fix ie location origin
+      // http://stackoverflow.com/questions/22564167/window-location-origin-gives-wrong-value-when-using-ie
+      if (!window.location.origin) {
+        window.location.origin = window.location.protocol + "//"
+          + window.location.hostname
+          + (window.location.port ? ':' + window.location.port : '');
+      }
+      var i = location.pathname.split('/').lastIndexOf('ant-design');
+      if (i > 0) {
+        window.rootUrl = location.origin + location.pathname.split('/').slice(0, 2+1).join('/');
+      } else {
+        window.rootUrl = location.origin;
+      }
+    })();
+    </script>
+    <script>
+      window.antdVersion = {
+        latest: '0.12.1'
+      };
+    </script>
+    <script src="../../dist/demo.js?20160114"></script>
+    
+  </head>
+  <body >
+    <header id="header" class="clearfix">
+      <!--<a class="logo" href="../..">-->
+        <!--<img width="60" src="https://img.alicdn.com/tps/TB1..zmLFXXXXb5apXXXXXXXXXX-267-267.png">-->
+        <!--开放平台文档-->
+      <!--</a>-->
+      <a class="logo" >
+        <img width="60" src="https://img.alicdn.com/tps/TB1..zmLFXXXXb5apXXXXXXXXXX-267-267.png">
+        开放平台文档
+      </a>
+      <div class="search">
+        <div id="autoComplete"></div>
+      </div>
+      <nav class="nav">
+        <span class="bar"></span>
+        <ul>
+          <!--<li class="">-->
+            <!--<a href="../..">首页</a>-->
+          <!--</li>-->
+          <!--<li class="">-->
+            <!--<a href="../practice/cases">实践</a>-->
+          <!--</li>-->
+          <li class="">
+            <a href="../_overview/tab0.html">开放平台文档</a>
+          </li>
+          <!--<li class="">-->
+            <!--<a href="../react/introduce">组件</a>-->
+          <!--</li>-->
+          <!--<li class="">-->
+            <!--<a href="../spec/introduce">语言</a>-->
+          <!--</li>-->
+          <!--<li class="">-->
+            <!--<a href="../resource/download">资源</a>-->
+          <!--</li>-->
+        </ul>
+      </nav>
+      <div class="nav-phone-icon"></div>
+    </header>
+    <div class="main-wrapper">
+      
+<aside class="aside-container">
+  <ul>
+      <li class="">
+        <a href="../_overview/"
+           class="">
+          概述
+          <span class="chinese"></span>
+        </a>
+      </li>
+    <li open="open">
+      <h4>企业接入指南</h4>
+      <ul class="">
+          <li class="">
+            <a href="../_guide/tab1.html"
+               class="">
+              Step 1 -- 注册钉钉企业
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../_guide/tab2.html"
+               class="">
+              Step 2 -- 创建微应用
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../_guide/tab3.html"
+               class="">
+              Step 3 -- 开发微应用
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../_guide/tab4.html"
+               class="">
+              域名白名单
+              <span class="chinese"></span>
+            </a>
+          </li>
+      </ul>
+    </li>
+    <li open="open">
+      <h4>ISV接入指南</h4>
+      <ul class="">
+          <li class="">
+            <a href="../_isvguide/tab1.html"
+               class="">
+              Step 1 -- 注册、认证钉钉企业账号
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../_isvguide/tab2.html"
+               class="">
+              Step 2 -- 成为钉钉开发者
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../_isvguide/tab3.html"
+               class="">
+              Step 3 -- 开发套件（微应用）
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../_isvguide/tab4.html"
+               class="">
+              Step 4 -- 推广套件
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../_isvguide/tab5.html"
+               class="">
+              ISV接入开发指南
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../_isvguide/tab6.html"
+               class="">
+              套件上架操作流程
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../_isvguide/tab7.html"
+               class="">
+              ISV通用技术方案
+              <span class="chinese"></span>
+            </a>
+          </li>
+      </ul>
+    </li>
+    <li open="open">
+      <h4>标准规范</h4>
+      <ul class="">
+          <li class="">
+            <a href="../_standar/tab1.html"
+               class="">
+              成为ISV的必要条件
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../_standar/tab2.html"
+               class="">
+              产品标准
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../_standar/tab3.html"
+               class="">
+              技术标准
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../_standar/tab4.html"
+               class="">
+              运营标准
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../_standar/tab5.html"
+               class="">
+              上架（应用中心）标准
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../_standar/tab6.html"
+               class="">
+              附录1：质量评分细则说明
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../_standar/tab7.html"
+               class="">
+              附录2:线上故障定义表
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../_standar/tab8.html"
+               class="">
+              附录3:适配机型列表
+              <span class="chinese"></span>
+            </a>
+          </li>
+      </ul>
+    </li>
+    <li open="open">
+      <h4>免登服务</h4>
+      <ul class="">
+          <li class="">
+            <a href="../_identityverify/tab1.html"
+               class="">
+              手机客户端微应用中调用免登
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../_identityverify/tab2.html"
+               class="">
+              钉钉PC版微应用中调用免登
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../_identityverify/tab3.html"
+               class="">
+              微应用后台管理员免登
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../_identityverify/tab4.html"
+               class="">
+              普通钉钉用户账号开放及免登(暂未开放，敬请期待)
+              <span class="chinese"></span>
+            </a>
+          </li>
+      </ul>
+    </li>
+    <li open="open">
+      <h4>服务端开发文档</h4>
+      <ul class="">
+          <li class="">
+            <a href="../_server/tab1.html"
+               class="">
+              建立连接
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../_server/tab2.html"
+               class="">
+              管理通讯录
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../_server/tab3.html"
+               class="">
+              管理微应用
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../_server/tab4.html"
+               class="">
+              群会话接口
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../_server/tab5.html"
+               class="">
+              客户通讯录接口（暂未开放）
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../_server/tab6.html"
+               class="">
+              通讯录及群会话变更事件回调接口
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../_server/tab7.html"
+               class="">
+              发送普通会话消息
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../_server/tab8.html"
+               class="">
+              发送企业会话消息
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../_server/tab9.html"
+               class="">
+              消息类型及数据格式
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../_server/tab10.html"
+               class="">
+              管理多媒体文件
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../_server/tab11.html"
+               class="">
+              免登
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../_server/tab12.html"
+               class="">
+              普通钉钉用户账号开放
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../_server/tab13.html"
+               class="">
+              JS接口API
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../_server/tab14.html"
+               class="">
+              附录
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../_server/tab15.html"
+               class="">
+              Demo
+              <span class="chinese"></span>
+            </a>
+          </li>
+      </ul>
+    </li>
+    <li open="open">
+      <h4>客户端开发文档</h4>
+      <ul class="">
+          <li class="">
+            <a href="tab1.html"
+               class="">
+              Demo和调试工具
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="tab2.html"
+               class="">
+              开发版钉钉客户端
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="tab3.html"
+               class="">
+              通用
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="tab4.html"
+               class="">
+              容器
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="tab5.html"
+               class="">
+              设备
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="tab6.html"
+               class="">
+              启动器
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="tab7.html"
+               class="">
+              钉盘
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="tab8.html"
+               class="">
+              弹窗
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="current">
+            <a href="tab9.html"
+               class="">
+              地图
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="tab10.html"
+               class="">
+              加速器
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="tab11.html"
+               class="">
+              业务
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="tab12.html"
+               class="">
+              会话
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="tab13.html"
+               class="">
+              Ding
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="tab14.html"
+               class="">
+              电话
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="tab15.html"
+               class="">
+              UI控件
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="tab16.html"
+               class="">
+              企业通讯录
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="tab17.html"
+               class="">
+              自定义联系人
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="tab18.html"
+               class="">
+              导航栏
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="tab19.html"
+               class="">
+              附录
+              <span class="chinese"></span>
+            </a>
+          </li>
+      </ul>
+    </li>
+    <li open="open">
+      <h4>PC端开发文档</h4>
+      <ul class="">
+          <li class="">
+            <a href="../_pc/tab1.html"
+               class="">
+              Demo 和调试工具
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../_pc/tab2.html"
+               class="">
+              配置展示形式
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../_pc/tab3.html"
+               class="">
+              应用设计
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../_pc/tab4.html"
+               class="">
+              通用
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../_pc/tab5.html"
+               class="">
+              弹窗
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../_pc/tab6.html"
+               class="">
+              业务
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../_pc/tab7.html"
+               class="">
+              导航
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../_pc/tab8.html"
+               class="">
+              Ding
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../_pc/tab9.html"
+               class="">
+              企业通讯录
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../_pc/tab10.html"
+               class="">
+              自定义联系人
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../_pc/tab11.html"
+               class="">
+              附录
+              <span class="chinese"></span>
+            </a>
+          </li>
+      </ul>
+    </li>
+    <li open="open">
+      <h4>性能优化</h4>
+      <ul class="">
+          <li class="">
+            <a href="../_cdn/tab1.html"
+               class="">
+              调试工具
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../_cdn/tab2.html"
+               class="">
+              H5性能优化方案
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../_cdn/tab3.html"
+               class="">
+              微应用性能评测
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../_cdn/tab4.html"
+               class="">
+              CDN服务
+              <span class="chinese"></span>
+            </a>
+          </li>
+      </ul>
+    </li>
+    <li open="open">
+      <h4>分享SDK</h4>
+      <ul class="">
+          <li class="">
+            <a href="../_share/tab1.html"
+               class="">
+              场景介绍
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../_share/tab2.html"
+               class="">
+              应用范例
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../_share/tab3.html"
+               class="">
+              渠道显示说明
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../_share/tab4.html"
+               class="">
+              分享sdk接入前准备
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../_share/tab5.html"
+               class="">
+              接入流程
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../_share/tab6.html"
+               class="">
+              Demo下载
+              <span class="chinese"></span>
+            </a>
+          </li>
+      </ul>
+    </li>
+      <li class="">
+        <a href="../_faq/tab0.html"
+           class="">
+          FAQ
+          <span class="chinese"></span>
+        </a>
+      </li>
+  </ul>
+</aside>
+ 
+<section class="main-container">
+  <article class="markdown">
+    <h1>地图 </h1>
+    <div class="toc"><ul><li><a href="#获取当前地理位置">获取当前地理位置</a></li></ul></div>
+    <p>dd.device</p>
+<h2 id="获取当前地理位置">获取当前地理位置<a href="#获取当前地理位置" class="anchor">#</a> </h2><p>钉钉Android2.1及之前版本返回的数据会多嵌套一层location字段,2.2版本会改成和钉钉iOS客户端一致，请注意，建议对返回的数据先判断存在location，做向后兼容处理。</p>
+<p>目前androidJSAPI返回的坐标是高德坐标，ios是标准坐标，如果服务端调用的是高德API，则需要对ios返回的经纬度做下处理，详细请见<a href="http://lbsbbs.amap.com/forum.php?mod=viewthread&amp;tid=724&amp;page=2"><font color=red >http://lbsbbs.amap.com/forum.php?mod=viewthread&amp;tid=724&amp;page=2</font></a>。坐标转换API <a href="http://lbs.amap.com/api/javascript-api/example/p/1602-2/"><font color=red >http://lbs.amap.com/api/javascript-api/example/p/1602-2/</font></a></p>
+<div class="highlight"><pre><code class="javascript">
+dd.device.geolocation.get({
+
+    targetAccuracy : <span class="hljs-built_in">Number</span>,
+
+    onSuccess : <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">result</span>) </span>{
+
+        <span class="hljs-comment">/*
+
+        {
+
+            longitude : Number,
+
+            latitude : Number,
+
+            accuracy : Number,
+
+            isWifiEnabled : Boolean,
+
+            isGpsEnabled : Boolean,
+
+            isFromMock : Boolean,
+
+            provider : wifi|lbs|gps,
+
+            accuracy : Number,
+
+            isMobileEnabled : Boolean,
+
+            errorMessage : String,
+
+            errorCode : Number
+
+        }
+
+        */</span>
+
+    },
+
+    onFail : <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">err</span>) </span>{}
+
+});</code></pre></div><h4 id="参数说明">参数说明<a href="#参数说明" class="anchor">#</a> </h4><p>参数 | 参数类型 | 说明</p>
+<p>----- | ----- | -----</p>
+<p>targetAccuracy | Number | 期望定位精度半径（单位米），定位结果尽量满足该参数要求，但是不一定能保证小于该误差</p>
+<h4 id="返回说明">返回说明<a href="#返回说明" class="anchor">#</a> </h4><p>参数 | 说明</p>
+<p>----- | -----</p>
+<p>longitude | 经度</p>
+<p>latitude | 纬度</p>
+<p>accuracy | 实际的定位精度半径（单位米）</p>
+<p>isWifiEnabled | wifi设置是否开启，不保证已连接上</p>
+<p>isGpsEnabled | gps设置是否开启，不保证已经连接上</p>
+<p>isFromMock | 定位返回的经纬度是否是模拟的结果</p>
+<p>provider | 我们使用的是混合定位，具体定位提供者有wifi/lbs/gps&quot; 这三种</p>
+<p>isMobileEnabled | 移动网络是设置是否开启，不保证已经连接上</p>
+<p>errorMessage | 对错误码的描述</p>
+<p>errorCode | 错误码</p>
+<!--
+
+
+## 搜索
+
+0.0.6
+
+
+```javascript
+
+dd.biz.map.search({
+
+  scope: Number, //定位范围
+
+  extraInfo: {
+
+      prompt: "提示信息"
+
+  }
+
+  onSuccess: function(data) {
+
+  /* data结构
+
+      {
+
+      "province": ""//省
+
+      "provinceCode": "" //省份编码
+
+      "city": "" //城市
+
+      "cityCode": "" //城市编码
+
+      "adCode": "" // POI的行政区划代码
+
+      "adName": "" // POI的行政区划名称
+
+      "distance": "" //获取POI距离中心点的距离
+
+      "postCode": "" //返回POI的邮编
+
+      "title": "" //POI的名称
+
+      "snippet": "" //POI的地址
+
+      "longitude": 11.11, //该点经度
+
+      "latitude": 11.11, //该点纬度
+
+      }
+
+  */
+
+  },
+
+  onFail : function(err) {
+
+  }
+
+})
+
+```
+
+#### 参数说明
+
+
+参数 | 参数类型 | 说明
+
+----- | ----- | -----
+
+scope | Number | 定位范围
+
+extraInfo.prompt | String | 提示信息
+
+
+#### 返回说明
+
+
+参数 | 说明
+
+----- | -----
+
+province | 省份
+
+provinceCode | 省份编码
+
+city | 城市
+
+cityCode | 城市编码
+
+adCode | POI的行政区划代码
+
+adName | POI的行政区划名称
+
+distance | 获取POI距离中心点的距离
+
+postCode | 返回POI的邮编
+
+title | POI的名称
+
+snippet | POI的地址
+
+longitude | 该点经度
+
+latitude | 该点纬度
+
+
+##定位
+
+0.0.6
+
+
+```javascript
+
+dd.biz.map.locate({
+
+  onSuccess: function(data) {
+
+   /* data结构
+
+      {
+
+      "province": ""//省
+
+      "provinceCode": "" //省份编码
+
+      "city": "" //城市
+
+      "cityCode": "" //城市编码
+
+      "adCode": "" // POI的行政区划代码
+
+      "adName": "" // POI的行政区划名称
+
+      "distance": "" //获取POI距离中心点的距离
+
+      "postCode": "" //返回POI的邮编
+
+      "title": "" //POI的名称
+
+      "snippet": "" //POI的地址
+
+      "longitude": 11.11, //该点经度
+
+      "latitude": 11.11, //该点纬度
+
+      }
+
+  */
+
+  },
+
+  onFail : function(err) {
+
+  }
+
+})
+
+```
+
+
+#### 返回说明
+
+
+参数 | 说明
+
+----- | -----
+
+province | 省份
+
+provinceCode | 省份编码
+
+city | 城市
+
+cityCode | 城市编码
+
+adCode | POI的行政区划代码
+
+adName | POI的行政区划名称
+
+distance | 获取POI距离中心点的距离
+
+postCode | 返回POI的邮编
+
+title | POI的名称
+
+snippet | POI的地址
+
+longitude | 该点经度
+
+latitude | 该点纬度
+
+
+-->
+
+  </article>
+</section>
+
+    </div><footer id="footer">
+  <ul>
+    <!--<li>-->
+      <!--<h2>GitHub</h2>-->
+      <!--<a target="_blank "href="https://github.com/ant-design/ant-design">仓库</a>-->
+      <!--<a target="_blank" href="https://github.com/ant-design/antd-init">脚手架</a>-->
+      <!--<a target="_blank" href="http://ant-tool.github.io/">开发工具</a>-->
+    <!--</li>-->
+    <li>
+      <h2>关于我们</h2>
+      <a target="_blank" href="https://open.dingtalk.com">钉钉开放平台</a>
+    </li>
+    <li>
+      <h2>联系我们</h2>
+      <!--<a target="_blank" href="https://github.com/ant-design/ant-design/issues">反馈和建议</a>-->
+      <a target="_blank" href="https://bbs.aliyun.com/thread/276.html">论坛</a>
+      <!--<a target="_blank" href="http://dwz.cn/2AF9ao">报告 Bug</a>-->
+    </li>
+    <!--<li>-->
+      <!--<div>©2015 蚂蚁金服体验技术部出品</div>-->
+      <!--<div>文档版本：<span id="versions-select"></span></div>-->
+    <!--</li>-->
+  </ul>
+</footer>
+    <script data-no-instant>
+    if (!location.port) {
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-72788897-1', 'auto');
+      ga('send', 'pageview');
+      InstantClick.on('change', function() {
+        ga('send', 'pageview', location.pathname + location.search);
+      });
+    }
+    </script>
+    <script data-no-instant>
+      InstantClick.on('change', function() {
+        InstantClickChangeFns.forEach(function(fn) {
+          fn();
+        });
+      });
+      InstantClick.init();
+    </script>
+  </body>
+</html>

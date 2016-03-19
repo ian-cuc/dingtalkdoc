@@ -33,6 +33,10 @@ module.exports = function(nico) {
     } else {
       post.template = post.meta.template = (post.meta.template || 'page');
     }
+    //if (filepath === 'docs/_overview/tab0.md') {
+    //  post.filename = post.meta.filename = 'index';
+    //  //post.template = post.meta.template = 'home';
+    //}
     if (filepath === 'readme.md') {
       post.filename = post.meta.filename = 'index';
       post.template = post.meta.template = 'home';
@@ -73,10 +77,32 @@ module.exports = function(nico) {
       }
       var directories = [rootDirectory];
       // docs 和 components 放在同一页
-      if (rootDirectory === 'docs/react' || rootDirectory === 'components' ||
-          post.filename.indexOf('CHANGELOG') >= 0) {
-        directories = ['docs/react', 'components'];
+      //if (rootDirectory === 'docs/react' || rootDirectory === 'components' ||
+      //    post.filename.indexOf('CHANGELOG') >= 0) {
+      //  directories = ['docs/react', 'components'];
+      //}
+
+      if (rootDirectory === 'docs/_cdn'  ||
+        rootDirectory === 'docs/_client'  ||
+        rootDirectory === 'docs/_faq'  ||
+        rootDirectory === 'docs/_guide'  ||
+        rootDirectory === 'docs/_identityverify'  ||
+        rootDirectory === 'docs/_isvguide'  ||
+
+        rootDirectory === 'docs/_overview'  ||
+        rootDirectory === 'docs/_pc'  ||
+        rootDirectory === 'docs/_server'  ||
+        rootDirectory === 'docs/_serverdebug'  ||
+        rootDirectory === 'docs/_share'  ||
+        rootDirectory === 'docs/_standar'  ||
+        rootDirectory === 'docs/_updatelog'  ||
+        rootDirectory === 'docs/_blog'  ) {
+        directories = ['docs/_cdn', 'docs/_client','docs/_faq',
+          'docs/_guide','docs/_identityverify','docs/_isvguide','docs/_overview',
+          'docs/_pc','docs/_server','docs/_serverdebug','docs/_share','docs/_standar',
+          'docs/_updatelog','docs/_blog'];
       }
+
       var cacheKey = directories.join('-');
       var categories;
       if (Categories[cacheKey]) {

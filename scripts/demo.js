@@ -104,7 +104,7 @@ InstantClickChangeFns.push(function () {
                      onSelect={this.handleSelect}
                      optionLabelProp="text"
                      dropdownClassName="autoComplete"
-                     searchPlaceholder="搜索组件..."
+                     searchPlaceholder="搜索..."
                      filterOption={this.filterOption}>{this.getOptions()}</Select>;
     }
   });
@@ -421,7 +421,7 @@ InstantClickChangeFns.push(function() {
     highlightCurrentNav: function(target) {
       target = target || this.navList.eq(this.navNum);
       this.navBar && this.navBar.css({
-        left: target.position().left,
+        //left: target.position().left,
         width: target.outerWidth()
       });
     },

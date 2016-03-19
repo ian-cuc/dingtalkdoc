@@ -113,34 +113,34 @@ InstantClickChangeFns.push(function () {
 });
 
 InstantClickChangeFns.push(function () {
-  var Select = antd.Select;
-  var Option = Select.Option;
-  var versionsHistory = {
-    '0.9.x': '09x.ant.design',
-    '0.10.x': '010x.ant.design',
-    '0.11.x': '011x.ant.design',
-  };
-  versionsHistory[antdVersion.latest] =
-    versionsHistory[antdVersion.latest] || 'ant.design';
-  var versions = Object.keys(versionsHistory).sort(function (a, b) {
-    return semver.lt(a.replace('.x', '.0'), b.replace('.x', '.0'));
-  });
-  var options = versions.map(function (version) {
-    var link = versionsHistory[version];
-    return <Option key={version} value={version}>{version}</Option>;
-  });
-
-  function onChange(value) {
-    if (versionsHistory[value]) {
-      location.href = location.href.replace(location.host, versionsHistory[value]);
-    }
-  }
-
-  ReactDOM.render(
-    <Select defaultValue={antdVersion.latest} size="small"
-            dropdownMatchSelectWidth={false}
-            onChange={onChange}>{options}</Select>
-    , document.getElementById('versions-select'));
+  //var Select = antd.Select;
+  //var Option = Select.Option;
+  //var versionsHistory = {
+  //  '0.9.x': '09x.ant.design',
+  //  '0.10.x': '010x.ant.design',
+  //  '0.11.x': '011x.ant.design',
+  //};
+  //versionsHistory[antdVersion.latest] =
+  //  versionsHistory[antdVersion.latest] || 'ant.design';
+  //var versions = Object.keys(versionsHistory).sort(function (a, b) {
+  //  return semver.lt(a.replace('.x', '.0'), b.replace('.x', '.0'));
+  //});
+  //var options = versions.map(function (version) {
+  //  var link = versionsHistory[version];
+  //  return <Option key={version} value={version}>{version}</Option>;
+  //});
+  //
+  //function onChange(value) {
+  //  if (versionsHistory[value]) {
+  //    location.href = location.href.replace(location.host, versionsHistory[value]);
+  //  }
+  //}
+  //
+  //ReactDOM.render(
+  //  <Select defaultValue={antdVersion.latest} size="small"
+  //          dropdownMatchSelectWidth={false}
+  //          onChange={onChange}>{options}</Select>
+  //  , document.getElementById('versions-select'));
 });
 
 window.BrowserDemo = React.createClass({

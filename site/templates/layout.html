@@ -21,7 +21,7 @@
     (function() {
       window.ANT_COMPONENTS = [];
       window.InstantClickChangeFns = [];
-      {%- for item in resource.pages|find_category(['企业接入指南','免登服务','服务端开发文档','客户端开发文档','PC端开发文档','性能优化','分享SDK','团队博客']) %}
+      {%- for item in resource.pages|find_category(['企业接入指南','免登服务','服务端开发文档','客户端开发文档','PC端开发文档','调试工具和性能优化','分享SDK','团队博客']) %}
       ANT_COMPONENTS.push({
         title: '{{item.title}}',
         url: '{{permalink_url(item)}}'
@@ -72,8 +72,8 @@
           <!--<li class="{%- if post.directory|rootDirectoryIn(['docs/practice']) %}current{%- endif %}">-->
             <!--<a href="{{static_url('../docs/practice/cases')}}">实践</a>-->
           <!--</li>-->
-          <li class="{%- if post.directory|rootDirectoryIn(['docs']) %}current{%- endif %}">
-            <a href="{{static_url('../docs/_overview/tab0.html')}}">开放平台文档</a>
+          <li class="{%- if post.directory|rootDirectoryIn(['docs']) or post.meta.filepath === 'index.md'%}current{%- endif %}">
+            <a href="{{static_url('../index.html')}}">开放平台文档</a>
           </li>
           <!--<li class="{%- if post.directory|rootDirectoryIn(['docs/react','components']) or post.meta.filepath === 'CHANGELOG.md' %}current{%- endif %}">-->
             <!--<a href="{{static_url('../docs/react/introduce')}}">组件</a>-->

@@ -1,47 +1,99 @@
-# 发送普通会话消息
+# 管理多媒体文件
 - category: 服务端开发文档
 - order: 8---
-员工可以在微应用中把消息发送到同企业的人或群。
+企业在使用接口时，对多媒体文件、多媒体消息的获取和调用等操作，是通过media_id来进行的。通过本接口，企业可以上传或下载多媒体文件。
 
-调用接口时，使用Https协议、JSON数据包格式。
+## 上传媒体文件
 
-目前支持文本、图片、语音、普通文件、OA消息以及link等消息类型，每个消息都由消息头和消息体组成，普通会话的消息头由sender,cid组成。消息体请参见以下各种[<font color=red >消息类型</font>](#消息类型及数据格式)。
+用于上传图片、语音等媒体资源文件以及普通文件（如doc，ppt），接口返回媒体资源标识ID：media_id。请注意，media_id是可复用的，同一个media_id可用于消息的多次发送。
 
-##### 参数说明
+##### 请求说明
 
-参数 | 参数类型 | 必须 | 说明
----------- | ------- | ------- | ------
-sender | String | 是 | 消息发送者员工ID
-cid | String | 是 | 群消息或者个人聊天会话Id，(通过[<font color=red>JSAPI之pickConversation接口</font>](#获取会话信息)唤起联系人界面选择之后即可拿到会话ID，之后您可以使用获取到的cid调用此接口）
+Https请求方式: POST
 
-普通会话消息样例：
+`https://oapi.dingtalk.com/media/upload?access_token=ACCESS_TOKEN&type=TYPE`
 
-![msg1](https://img.alicdn.com/tps/TB1FVMvIFXXXXcnXXXXXXXXXXXX.jpg)
+##### 参数说明
 
-## 发送普通会话消息接口说明
+参数 | 参数类型 | 必须 | 说明
+---------- | ------- | ------- | ------
+access_token | String | 是 | 调用接口凭证
+type |String | 是 | 媒体文件类型，分别有图片（image）、语音（voice）、普通文件(file)
+media |String | 是 | form-data中媒体文件标识，有filename、filelength、content-type等信息
 
-##### 请求说明
+代码示例:[mediademo](https://github.com/ddtalk/HarleyCorp/blob/master/src/com/alibaba/dingtalk/openapi/demo/utils/HttpHelper.java)
 
-Https请求方式: POST
+##### 返回结果
 
-`https://oapi.dingtalk.com/message/send_to_conversation?access_token=ACCESS_TOKEN`
+```
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "type": "image",
+    "media_id": "@dsa8d87y7c8d8c"
+}
+```
 
-##### 参数说明
+参数 |说明
+---------- | ------
+errcode | 错误码
+errmsg | 错误信息
+type | 媒体文件类型，分别有图片（image）、语音（voice）、普通文件(file)
+media_id | 媒体文件上传后获取的唯一标识
+created_at | 媒体文件上传时间戳
 
-参数 | 参数类型 | 必须 | 说明
----------- | ------- | ------- | ------
-access_token |String | 是 | 调用接口凭证
+##### 上传的媒体文件限制
 
-##### 返回说明
+* 图片（image）:1MB，支持JPG格式
+* 语音（voice）：2MB，播放长度不超过60s，AMR格式
+* 普通文件（file）：10MB
 
-如果是群，返回跟发送者同一家企业的一组工号；如果是个人聊天，只返回发送者同一家企业的一个工号；不在同一家企业，发送失败
+## 获取媒体文件
 
-```
-{
-    "errcode": 0,
-    "errmsg": "ok",
-    "receiver": "UserID1|UserID2"
-}
-```
+通过media_id获取图片、语音等文件。
 
-
+
+
+##### 请求说明
+
+Https请求方式: GET
+
+`https://oapi.dingtalk.com/media/get?access_token=ACCESS_TOKEN&media_id=MEDIA_ID`
+
+
+##### 参数说明
+
+```
+  HTTP/1.1 200: OK
+  Connection: close
+  Content-Type: image/jpeg
+  Content-disposition: attachment; filename="MEDIA_ID.jpg"
+  Date: Sun, 04 Jan 2015 12:00:00 GMT
+  Cache-Control: no-cache, must-revalidate
+  Content-Length: 1234567
+  ...
+```
+
+参数 |参数类型 | 必须 | 说明
+---------- | ------- | ------- | ------
+access_token |String | 是 | 调用接口凭证
+media_id |String | 是 | 媒体文件的唯一标示
+
+
+##### 返回说明
+
+
+和普通的http下载相同，请根据http头做相应的处理。
+
+
+a)正确时返回：
+
+```
+{
+    "errcode": 40004,
+    "errmsg": "invalid media_id"
+}
+```
+
+b)错误时返回（这里省略了HTTP首部）：
+

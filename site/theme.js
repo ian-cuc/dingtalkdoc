@@ -33,14 +33,14 @@ module.exports = function(nico) {
     } else {
       post.template = post.meta.template = (post.meta.template || 'page');
     }
-    //if (filepath === 'docs/_overview/tab0.md') {
+    //if (filepath === 'docs/_overview/index.md') {
     //  post.filename = post.meta.filename = 'index';
     //  //post.template = post.meta.template = 'home';
     //}
-    if (filepath === 'readme.md') {
-      post.filename = post.meta.filename = 'index';
-      post.template = post.meta.template = 'home';
-    }
+    //if (filepath === 'readme.md') {
+    //  post.filename = post.meta.filename = 'index';
+    //  post.template = post.meta.template = 'home';
+    //}
     if (filepath.indexOf('/demo/') > 0) {
       post.template = post.meta.template = 'code';
     }
@@ -72,7 +72,7 @@ module.exports = function(nico) {
     },
     get_categories: function(posts, post) {
       var rootDirectory = getRootDirectory(post.directory);
-      if (!rootDirectory && post.filename.indexOf('CHANGELOG') < 0) {
+      if (!rootDirectory && post.filename.indexOf('CHANGELOG') < 0 && post.filename.indexOf('index') < 0) {
         return;
       }
       var directories = [rootDirectory];
@@ -88,7 +88,6 @@ module.exports = function(nico) {
         rootDirectory === 'docs/_guide'  ||
         rootDirectory === 'docs/_identityverify'  ||
         rootDirectory === 'docs/_isvguide'  ||
-
         rootDirectory === 'docs/_overview'  ||
         rootDirectory === 'docs/_pc'  ||
         rootDirectory === 'docs/_server'  ||
@@ -96,7 +95,8 @@ module.exports = function(nico) {
         rootDirectory === 'docs/_share'  ||
         rootDirectory === 'docs/_standar'  ||
         rootDirectory === 'docs/_updatelog'  ||
-        rootDirectory === 'docs/_blog'  ) {
+        rootDirectory === 'docs/_blog'||
+        (post.filename.indexOf('index') >= 0 && !rootDirectory)) {
         directories = ['docs/_cdn', 'docs/_client','docs/_faq',
           'docs/_guide','docs/_identityverify','docs/_isvguide','docs/_overview',
           'docs/_pc','docs/_server','docs/_serverdebug','docs/_share','docs/_standar',
@@ -116,7 +116,8 @@ module.exports = function(nico) {
             return;
           }
           if (directories.indexOf(itemDirectory) >= 0 ||
-              item.filename.indexOf('CHANGELOG') >= 0) {
+              item.filename.indexOf('CHANGELOG') >= 0 ||
+            (item.filename.indexOf('index') >= 0 && itemDirectory.indexOf("components") < 0)) {
             item.filename = item.filename.toLowerCase();
             categories[cat] = categories[cat] || [];
             categories[cat].push(item);
@@ -149,7 +150,7 @@ module.exports = function(nico) {
           return a - b;
         });
         categories = categories.sort(function(a, b) {
-          var cats = ['1','企业接入指南', 'ISV接入指南', '标准规范', '免登服务', '服务端开发文档', '客户端开发文档', 'PC端开发文档', '性能优化', '分享SDK','2','团队博客','3'];
+          var cats = ['1','企业接入指南', 'ISV接入指南', '标准规范', '免登服务', '服务端开发文档', '客户端开发文档', 'PC端开发文档', '调试工具和性能优化', '分享SDK','2','团队博客','3'];
           a = cats.indexOf(a.name);
           b = cats.indexOf(b.name);
           return a - b;

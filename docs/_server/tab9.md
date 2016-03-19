@@ -1,192 +1,62 @@
-# 消息类型及数据格式
+# JS接口API
 - category: 服务端开发文档
 - order: 10---
-## text消息
+## 获取jsapi_ticket
 
-```
-{
-    "msgtype": "text",
-    "text": {
-        "content": "张三的请假申请"
-    }
-}
-```
+企业在使用微应用中的JS API时，需要先从钉钉开放平台接口获取jsapi_ticket生成签名数据，并将最终签名用的部分字段及签名结果返回到H5中，JS API底层将通过这些数据判断H5是否有权限使用JS API。
 
-##### 参数说明
+##### 请求说明
+Https请求方式：GET
 
-参数 | 参数类型 | 必须 | 说明
----------- | ------- | ------- | ------
-msgtype |String | 是 | 消息类型，此时固定为：text
-content |String | 是 | 消息内容
+`https://oapi.dingtalk.com/get_jsapi_ticket?access_token=ACCESS_TOKE`
 
-## image消息
+##### 参数说明
+参数 | 参数类型 | 必须 | 说明
+---------- | ------- | ------- | ------
+access_token | String | 是 | 调用接口凭证
+type | String | 是 | 这里是固定值，jsapi
 
-```
-{
-    "msgtype": "image",
-    "image": {
-        "media_id": "MEDIA_ID"
-    }
-}
-```
+#####  返回结果
+正确时返回示例如下：
 
-##### 参数说明
+```
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "ticket": "dsf8sdf87sd7f87sd8v8ds0vs09dvu09sd8vy87dsv87",
+    "expires_in": 7200
+}
+```
 
-参数 | 参数类型 | 必须 | 说明
----------- | ------- | ------- | ------
-msgtype |String | 是 | 消息类型，此时固定为：image
-media_id | String | 是 | 图片媒体文件id，可以调用上传媒体文件接口获取。建议宽600像素 x 400像素，宽高比3：2
+参数 | 说明
+---------- | ------
+errcode | 错误码
+errmsg | 错误信息
+ticket | 用于JS API的临时票据
+expires_in | 票据过期时间
 
-## voice消息
+出错时返回示例如下：
 
-```
-{
-    "msgtype": "voice",
-    "voice": {
-       "media_id": "MEDIA_ID"
-    }
-}
-```
+```
+{
+    "errcode": 45009,
+    "errmsg": "接口调用超过限制"
+}
+```
 
-##### 参数说明
+## JS-SDK
 
-参数 | 参数类型 | 必须 | 说明
----------- | ------- | ------- | ------
-msgtype |String | 是 | 消息类型，此时固定为：voice
-media_id |String | 是 | 语音媒体文件id，可以调用上传媒体文件接口获取。2MB，播放长度不超过60s，AMR格式
+JS-SDK 为H5页面提供了一系列原生UI控件或者服务的JS接口，文档地址如下：
 
-## file消息
-
-```
-{
-    "msgtype": "file",
-    "file": {
-       "media_id": "MEDIA_ID"
-    }
-}
-```
-
-##### 参数说明
-
-参数 | 参数类型 | 必须 | 说明
----------- | ------- | ------- | ------
-msgtype | String| 是 | 消息类型，此时固定为：file
-media_id |String | 是 | 媒体文件id，可以调用上传媒体文件接口获取。10MB
+[<font color=red >客户端开发文档</font>](#客户端开发文档)
 
 
-## link消息
+<!--## 管理日历接入指南
+ 钉钉提供微应用接入管理日历的能力。目前处于测试阶段，为了保证接入的质量以及良好的用户体验，接入方需要与钉钉管理日历团队协商接入方案。
 
-```
-{
-    "msgtype": "link",
-    "link": {
-        "messageUrl": "http://s.dingtalk.com/market/dingtalk/error_code.php",
-        "picUrl":"@lALOACZwe2Rk",
-        "title": "测试",
-        "text": "测试"
-    }
-}
-```
+由于不同接入方的业务不完全一致，如果接入方希望以与本文档不同的形式接入，可以向我们提出合作邀请，我们也提供定制化接入支持。（联系邮箱：pstar.zhangp@alibaba-inc.com）
 
-##### 参数说明
-
-参数 | 参数类型 | 必须 | 说明
----------- | ------- | ------- | ------
-msgtype | String | 是 | 消息类型，此时固定为：link
-
-#### link消息体格式
-
-参数 | 参数类型 | 必须 | 说明
----------- | ------- | ------- | ------
-link.messageUrl | String | 是 | 消息点击链接地址
-link.picUrl | String | 是 | 图片媒体文件id，可以调用上传媒体文件接口获取
-link.title | String | 是 | 消息标题
-link.text | String | 是 | 消息描述
-
-## OA消息
-
-```
-{
-     "msgtype": "oa",
-     "oa": {
-        "message_url": "http://dingtalk.com",
-        "head": {
-            "bgcolor": "FFBBBBBB",
-            "text": "头部标题"
-        },
-        "body": {
-            "title": "正文标题",
-            "form": [
-                {
-                    "key": "姓名:",
-                    "value": "张三"
-                },
-                {
-                    "key": "年龄:",
-                    "value": "20"
-                },
-                {
-                    "key": "身高:",
-                    "value": "1.8米"
-                },
-                {
-                    "key": "体重:",
-                    "value": "130斤"
-                },
-                {
-                    "key": "学历:",
-                    "value": "本科"
-                },
-                {
-                    "key": "爱好:",
-                    "value": "打球、听音乐"
-                }
-            ],
-            "rich": {
-                "num": "15.6",
-                "unit": "元"
-            },
-            "content": "大段文本大段文本大段文本大段文本大段文本大段文本大段文本大段文本大段文本大段文本大段文本大段文本",
-            "image": "@lADOADmaWMzazQKA",
-            "file_count": "3",
-            "author": "李四 "
-        }
-    }
-}
-```
-
-##### 参数说明
-
-参数 | 参数类型 | 必须 | 说明
------ | ------- | ------- | ------
-msgtype |String | 是 | 消息类型，此时固定为：oa
-
-### OA消息体内容
-
-##### 参数说明
-
-参数 | 参数类型 | 必须 | 说明
------- | ------- | ------- | ------
-oa.message_url| String | 是 | 客户端点击消息时跳转到的H5地址
-oa.pc_message_url| String | 否 | PC端点击消息时跳转到的H5地址
-oa.head | String | 是 | 消息头部内容
-oa.head.bgcolor | String | 是 | 消息头部的背景颜色。长度限制为8个英文字符，其中前2为表示透明度，后6位表示颜色值。不要添加0x
-oa.head.text | String | 是 | 消息的头部标题
-oa.body | Array[JSON Object] | 是 | 消息体
-oa.body.title | String | 否 | 消息体的标题
-oa.body.form | Array[JSON Object] | 否 | 消息体的表单，最多显示6个，超过会被隐藏
-oa.body.form.key | String | 否 | 消息体的关键字
-oa.body.form.value | String | 否 | 消息体的关键字对应的值
-oa.body.rich | JSON Object | 否 | 单行富文本信息
-oa.body.rich.num | String | 否 | 单行富文本信息的数目
-oa.body.rich.unit | String | 否| 单行富文本信息的单位
-oa.body.content | String | 否 | 消息体的内容，最多显示3行
-oa.body.image | String | 否 | 消息体中的图片media_id
-oa.body.file_count | String | 否 | 自定义的附件数目。此数字仅供显示，钉钉不作验证
-oa.body.author | String | 否 | 自定义的作者名字
-
-### OA消息截图
-
-![oames](https://img.alicdn.com/tps/TB1gVcFIFXXXXcGXXXXXXXXXXXX.jpg)
-
-
+管理日历目前已接入多个微应用，例如：签到、审批、考勤、日志、拜访计划等。
+    
+具体接入文档查看：[管理日历接入指南](http://download.taobaocdn.com/freedom/31112/pdf/p1a6htv7hq1o3p63g9ahpq51n5q4.pdf)
+-->

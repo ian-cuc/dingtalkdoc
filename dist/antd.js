@@ -18758,6 +18758,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	  value: true
 	});
 	
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+	
 	var _react = __webpack_require__(86);
 	
 	var _react2 = _interopRequireDefault(_react);
@@ -18777,6 +18779,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+	
+	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
 	
 	/*
 	
@@ -18883,7 +18887,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 	  },
 	  render: function render() {
-	    var _React$createElement;
+	    var _extends2;
 	
 	    var _props = this.props;
 	    var prefixCls = _props.prefixCls;
@@ -18899,9 +18903,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	    var overlayStyle = _props.overlayStyle;
 	    var trigger = _props.trigger;
 	
+	    var otherProps = _objectWithoutProperties(_props, ['prefixCls', 'children', 'transitionName', 'animation', 'align', 'placement', 'getPopupContainer', 'showAction', 'hideAction', 'overlayClassName', 'overlayStyle', 'trigger']);
+	
 	    return _react2.default.createElement(
 	      _rcTrigger2.default,
-	      (_React$createElement = {
+	      _extends({}, otherProps, (_extends2 = {
 	        prefixCls: prefixCls,
 	        ref: 'trigger',
 	        popupClassName: overlayClassName,
@@ -18909,7 +18915,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        builtinPlacements: _placements2.default,
 	        action: trigger,
 	        showAction: showAction
-	      }, _defineProperty(_React$createElement, 'showAction', showAction), _defineProperty(_React$createElement, 'hideAction', hideAction), _defineProperty(_React$createElement, 'popupPlacement', placement), _defineProperty(_React$createElement, 'popupAlign', align), _defineProperty(_React$createElement, 'popupTransitionName', transitionName), _defineProperty(_React$createElement, 'popupAnimation', animation), _defineProperty(_React$createElement, 'popupVisible', this.state.visible), _defineProperty(_React$createElement, 'afterPopupVisibleChange', this.afterVisibleChange), _defineProperty(_React$createElement, 'popup', this.getMenuElement()), _defineProperty(_React$createElement, 'onPopupVisibleChange', this.onVisibleChange), _defineProperty(_React$createElement, 'getPopupContainer', getPopupContainer), _React$createElement),
+	      }, _defineProperty(_extends2, 'showAction', showAction), _defineProperty(_extends2, 'hideAction', hideAction), _defineProperty(_extends2, 'popupPlacement', placement), _defineProperty(_extends2, 'popupAlign', align), _defineProperty(_extends2, 'popupTransitionName', transitionName), _defineProperty(_extends2, 'popupAnimation', animation), _defineProperty(_extends2, 'popupVisible', this.state.visible), _defineProperty(_extends2, 'afterPopupVisibleChange', this.afterVisibleChange), _defineProperty(_extends2, 'popup', this.getMenuElement()), _defineProperty(_extends2, 'onPopupVisibleChange', this.onVisibleChange), _defineProperty(_extends2, 'getPopupContainer', getPopupContainer), _extends2)),
 	      children
 	    );
 	  }
@@ -33346,10 +33352,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	      elements.forEach(function (elem) {
 	        var animatingClassName = _this4.props.animatingClassName;
-	        if (elem.className.indexOf(animatingClassName[1]) >= 0) {
-	          elem.className = elem.className.replace(animatingClassName[1], '');
-	        }
-	        if (elem.className.indexOf(' ' + animatingClassName[0]) === -1) {
+	        elem.className = elem.className.replace(animatingClassName[1], '');
+	        if (elem.className.indexOf(animatingClassName[0]) === -1) {
 	          elem.className += ' ' + animatingClassName[0];
 	        }
 	      });
@@ -33373,9 +33377,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	      elements.forEach(function (elem) {
 	        var animatingClassName = _this6.props.animatingClassName;
-	        if (elem.className.indexOf(animatingClassName[0]) >= 0) {
-	          elem.className = elem.className.replace(animatingClassName[0], '');
-	        }
+	        elem.className = elem.className.replace(animatingClassName[0], '');
 	        if (elem.className.indexOf(animatingClassName[1]) === -1) {
 	          elem.className += ' ' + animatingClassName[1];
 	        }
@@ -39400,12 +39402,14 @@ return /******/ (function(modules) { // webpackBootstrap
 	  }
 	
 	  var formData = new FormData();
-	  formData.append(option.filename, option.file);
+	
 	  if (option.data) {
 	    Object.keys(option.data).map(function (key) {
 	      formData.append(key, option.data[key]);
 	    });
 	  }
+	
+	  formData.append(option.filename, option.file);
 	
 	  xhr.onerror = function error(e) {
 	    option.onError(e);
@@ -39419,11 +39423,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	    option.onSuccess(getBody(xhr));
 	  };
 	
+	  xhr.open('post', option.action, true);
+	
+	  // Has to be after `.open()`. See https://github.com/enyo/dropzone/issues/179
 	  if (option.withCredentials && 'withCredentials' in xhr) {
 	    xhr.withCredentials = true;
 	  }
 	
-	  xhr.open('post', option.action, true);
 	  xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
 	  var headers = option.headers || {};
 	  for (var h in headers) {

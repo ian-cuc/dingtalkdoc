@@ -20,7 +20,6 @@ node_modules/
 .settings
 npm-debug.log
 nohup.out
-dist
 lib
 elasticsearch-*
 config/base.yaml

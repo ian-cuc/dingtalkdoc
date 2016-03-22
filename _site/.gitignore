@@ -20,6 +20,7 @@ node_modules/
 .settings
 npm-debug.log
 nohup.out
+_site
 dist
 lib
 elasticsearch-*

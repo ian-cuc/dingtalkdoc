@@ -1,0 +1,129 @@
+<div class="code-box" id="select-demo-checkable">
+  <div class="code-box-demo">
+    <div id="components-tree-select-demo-checkable"></div>
+    <script>mountNode = document.getElementById('components-tree-select-demo-checkable');</script>
+    <script>(function(){'use strict';
+
+var _antd = require('antd');
+
+var treeData = [{
+  'label': '节点一',
+  'value': '0-0',
+  'key': '0-0',
+  'children': [{
+    'label': '子节点一',
+    'value': '0-0-0',
+    'key': '0-0-0'
+  }, {
+    'label': '子节点二',
+    'value': '0-0-1',
+    'key': '0-0-1'
+  }]
+}, {
+  'label': '节点二',
+  'value': '0-1',
+  'key': '0-1',
+  'children': [{
+    'label': '子节点三',
+    'value': '0-1-0',
+    'key': '0-1-0'
+  }, {
+    'label': '子节点四',
+    'value': '0-1-1',
+    'key': '0-1-1'
+  }]
+}];
+
+var Demo = React.createClass({
+  displayName: 'Demo',
+  getInitialState: function getInitialState() {
+    return {
+      value: ['0-0-0']
+    };
+  },
+  onChange: function onChange(value) {
+    console.log('onChange ', value, arguments);
+    this.setState({ value: value });
+  },
+  render: function render() {
+    var tProps = {
+      treeData: treeData,
+      value: this.state.value,
+      onChange: this.onChange,
+      multiple: true,
+      treeCheckable: true,
+      treeDefaultExpandAll: true,
+      style: {
+        width: 360
+      }
+    };
+    return React.createElement(_antd.TreeSelect, tProps);
+  }
+});
+
+ReactDOM.render(React.createElement(Demo, null), mountNode);})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> { TreeSelect } <span class="hljs-keyword">from</span> <span class="hljs-string">'antd'</span>;
+
+<span class="hljs-keyword">const</span> treeData = [{
+  <span class="hljs-string">'label'</span>: <span class="hljs-string">'节点一'</span>,
+  <span class="hljs-string">'value'</span>: <span class="hljs-string">'0-0'</span>,
+  <span class="hljs-string">'key'</span>: <span class="hljs-string">'0-0'</span>,
+  <span class="hljs-string">'children'</span>: [{
+    <span class="hljs-string">'label'</span>: <span class="hljs-string">'子节点一'</span>,
+    <span class="hljs-string">'value'</span>: <span class="hljs-string">'0-0-0'</span>,
+    <span class="hljs-string">'key'</span>: <span class="hljs-string">'0-0-0'</span>,
+  }, {
+    <span class="hljs-string">'label'</span>: <span class="hljs-string">'子节点二'</span>,
+    <span class="hljs-string">'value'</span>: <span class="hljs-string">'0-0-1'</span>,
+    <span class="hljs-string">'key'</span>: <span class="hljs-string">'0-0-1'</span>,
+  }],
+}, {
+  <span class="hljs-string">'label'</span>: <span class="hljs-string">'节点二'</span>,
+  <span class="hljs-string">'value'</span>: <span class="hljs-string">'0-1'</span>,
+  <span class="hljs-string">'key'</span>: <span class="hljs-string">'0-1'</span>,
+  <span class="hljs-string">'children'</span>: [{
+    <span class="hljs-string">'label'</span>: <span class="hljs-string">'子节点三'</span>,
+    <span class="hljs-string">'value'</span>: <span class="hljs-string">'0-1-0'</span>,
+    <span class="hljs-string">'key'</span>: <span class="hljs-string">'0-1-0'</span>,
+  }, {
+    <span class="hljs-string">'label'</span>: <span class="hljs-string">'子节点四'</span>,
+    <span class="hljs-string">'value'</span>: <span class="hljs-string">'0-1-1'</span>,
+    <span class="hljs-string">'key'</span>: <span class="hljs-string">'0-1-1'</span>,
+  }],
+}];
+
+<span class="hljs-keyword">const</span> Demo = React.createClass({
+  getInitialState() {
+    <span class="hljs-keyword">return</span> {
+      value: [<span class="hljs-string">'0-0-0'</span>],
+    };
+  },
+  onChange(value) {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'onChange '</span>, value, <span class="hljs-built_in">arguments</span>);
+    <span class="hljs-keyword">this</span>.setState({ value });
+  },
+  render() {
+    <span class="hljs-keyword">const</span> tProps = {
+      treeData,
+      value: <span class="hljs-keyword">this</span>.state.value,
+      onChange: <span class="hljs-keyword">this</span>.onChange,
+      multiple: <span class="hljs-literal">true</span>,
+      treeCheckable: <span class="hljs-literal">true</span>,
+      treeDefaultExpandAll: <span class="hljs-literal">true</span>,
+      style: {
+        width: <span class="hljs-number">360</span>,
+      },
+    };
+    <span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">TreeSelect</span> {<span class="hljs-attribute">...tProps</span>} /&gt;</span>;</span>
+  },
+});
+
+ReactDOM.render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Demo</span> /&gt;</span>, mountNode);</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#select-demo-checkable">多选</a>
+    </div>
+    <p>多选和勾选框功能。</p>
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none" style="-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;"></span>
+  </div>
+</div>

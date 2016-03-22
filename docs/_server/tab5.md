@@ -1,53 +1,464 @@
-# 发送企业会话消息
+# 客户通讯录接口（暂未开放）
 - category: 服务端开发文档
 - order: 6---
-企业可以主动发消息给员工，消息量不受限制。
+您可以通过使用客户通讯接口，将您的CRM应用中的员工与客户的关系、客户与客户联系人的关系在钉钉客户端通讯录中展现，与钉钉有更深入的功能融合，对于用户来说客户关系与通讯录的紧密结合，更容易管理和联系核心客户
 
-发送企业会话消息和发送普通会话消息的不同之处在于发送消息的主体不同
-- 普通会话消息发送主体是普通员工，体现在接收方手机上的联系人是消息发送员工
-
-- 企业会话消息发送主体是企业，体现在接收方手机上的联系人是你填写的agentid对应的微应用
-
-调用接口时，使用Https协议、JSON数据包格式。
-
-目前支持text、image、voice、file、link、OA消息类型。每个消息都由消息头和消息体组成，企业会话的消息头由touser,toparty,agentid组成。消息体请参见以下各种[<font color=red >消息类型</font>](#消息类型及数据格式)。
-
-##### 参数说明
-
-参数 | 参数类型 | 必须 | 说明
----------- | ------- | ------- | ------
-touser |String | 否 | 员工ID列表（消息接收者，多个接收者用' &#124; '分隔）。特殊情况：指定为@all，则向该企业应用的全部成员发送
-toparty |String | 否 | 部门id列表，多个接收者用' &#124; '分隔。当touser为@all时忽略本参数 <font color=red >touser或者toparty 二者有一个必填</font>
-agentid | String | 是 |企业应用id，这个值代表以哪个应用的名义发送消息
-
-企业会话消息样例：
-
-![msg2](https://img.alicdn.com/tps/TB1PAQwIFXXXXXOXXXXXXXXXXXX.jpg)
-
-## 发送企业消息接口说明
+## 员工新增客户信息
 
 ##### 请求说明
 
 Https请求方式: POST
 
-`https://oapi.dingtalk.com/message/send?access_token=ACCESS_TOKEN`
+`https://oapi.dingtalk.com/crm/customer/create?access_token=ACCESS_TOKEN&user_id=USER_ID`
+
+##### 请求包结构体
+
+```
+{
+"customer":[
+{
+"name":"姓名",
+"address":"地址",
+"description":"描述",
+"telephone":"电话"
+}
+],
+"contacts":[
+{
+"name":"姓名",
+"mobile":"手机",
+"attached":"备注"
+}
+],
+"userIds":[
+"USER_ID","USER_ID"
+],
+"create_by":"创建时间"
+}
+
+```
+
+##### 参数说明
+
+参数 | 参数类型 | 必须 | 说明
+----------| ------- | ------- | ------
+access_token | String | 是 | 调用接口凭证
+user_id | String | 是 |  员工在企业内的userid
+customer | JSONObject | 是 |  客户信息
+name | String | 是 |  客户名称
+address | String | 是 |  客户地址
+description | String | 是 |  客户描述
+telephone | String | 是 |  客户电话
+contacts | JSONObject | 否 |  客户联系人信息
+name | String | 否 |  客户联系人名称
+mobile | String | 否 |  客户联系人手机
+attached | String | 否 |  客户联系人备注
+userIds | String[] | 否 |  跟进客户的员工信息
+create_by | String | 是 |  创建时间
+
+##### 返回结果
+
+```
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "customerid": "xxxxxxxxxxxxxxxxxx"
+}
+```
+
+参数 | 说明
+----------  | ------
+errcode | 返回码
+errmsg | 对返回码的文本描述内容
+customerid | 客户id
+
+## 员工修改客户信息
+
+##### 请求说明
+
+Https请求方式: POST
+
+`https://oapi.dingtalk.com/crm/customer/update?access_token=ACCESS_TOKEN&user_id=USER_ID`
+
+##### 请求包结构体
+
+```
+{
+"id":"客户id",
+"name":"客户名称",
+"address":"客户地址",
+"description":"客户描述",
+"telephone":"电话",
+"modified_by":"修改时间"
+}
+```
+
+##### 参数说明
+
+参数 | 参数类型 | 必须 | 说明
+----------| ------- | ------- | ------
+access_token | String | 是 | 调用接口凭证
+user_id | String | 是 | 员工id
+id | String | 是 |  客户id
+name | String | 否 | 客户名称
+address  | String | 否 | 客户地址信息
+description  | String | 否 | 客户描述信息
+telephone  | String | 否 | 客户联系电话
+modified_by  | String | 否 | 修改时间
+
+##### 返回结果
+
+```
+{
+    "errcode": 0,
+    "errmsg": "ok"
+}
+```
+
+参数 | 说明
+----------  | ------
+errcode | 返回码
+errmsg | 对返回码的文本描述内容
+
+## 员工删除客户
+
+##### 请求说明
+
+Https请求方式: POST
+
+`https://oapi.dingtalk.com/crm/customer/delete?access_token=ACCESS_TOKEN&user_id=USER_ID`
+
+##### 请求包结构体
+
+```
+{
+"id[]":"客户id"
+}
+
+```
+
+##### 参数说明
+
+参数 | 参数类型 | 必须 | 说明
+---------- | ------- | ------- | ------
+access_token | String | 是 | 调用接口凭证
+user_id | String | 是 | 会话id
+id | String[] | 是 | 客户id
+
+##### 返回结果
+
+```
+{
+    "errcode": 0,
+    "errmsg": "ok"
+ }
+```
+
+参数 | 说明
+---- | -----
+errcode | 返回码
+errmsg | 对返回码的文本描述内容
+
+
+## 获取客户详细信息
+
+##### 请求说明
+
+Https请求方式: GET
+
+`https://oapi.dingtalk.com/crm/customer/get?access_token=ACCESS_TOKEN&id=CUSTOMER_ID`
+
+##### 参数说明
+
+参数 | 参数类型 | 必须 | 说明
+---------- | ------- | ------- | ------
+access_token | String | 是 | 调用接口凭证
+id | String | 是 | 客户id
+
+##### 返回结果
+
+```
+{
+"customer":{
+
+"name":"客户名称",
+"address":"客户地址",
+"description":"客户描述",
+"telephone":"客户电话"
+},
+"contactList":[
+{
+"name":"客户联系人名称",
+"mobile":"客户联系人电话",
+"attached":"客户联系人备注"
+}
+],
+"userIds":[
+                "USER_ID","USER_ID"
+],
+"create_by":"创建时间"
+}
+```
+
+参数 | 说明
+---- | -----
+customer  |  客户信息
+name |  客户名称
+address  |  客户地址
+description |  客户描述
+telephone  |  客户电话
+contacts  |  客户联系人信息
+name  |  客户联系人名称
+mobile  |  客户联系人手机
+attached  |  客户联系人备注
+userIds  |  跟进客户的员工信息
+create_by  |  创建时间
+
+## 获取客户列表
+
+##### 请求说明
+
+Https请求方式: GET
+
+`https://oapi.dingtalk.com/crm/customer/get?access_token=ACCESS_TOKEN`
+
+##### 参数说明
+
+参数 | 参数类型 | 必须 | 说明
+---------- | ------- | ------- | ------
+access_token | String | 是 | 调用接口凭证
+
+##### 返回结果
+
+```
+{
+"customerlist":[
+{
+"name":"客户名称",
+"address":"客户地址",
+"description":"客户描述",
+"telephone":"客户电话"
+}
+]
+}
+```
+
+参数 | 说明
+---- | -----
+customerlist  |  客户列表信息
+name |  客户名称
+address  |  客户地址
+description |  客户描述
+telephone  |  客户电话
+
+## 员工新增客户联系人
+
+##### 请求说明
+
+Https请求方式: POST
+
+`https://oapi.dingtalk.com/crm/contact/create?access_token=ACCESS_TOKEN&user_id=USER_ID`
+
+##### 请求包结构体
+
+```
+{
+"customerid":"客户id",
+"name":"客户联系人名称",
+"mobile":"客户联系人手机",
+"attached":"客户联系人备注",
+"create_by":"创建时间"
+}
+
+```
 
 ##### 参数说明
 
 参数 | 参数类型 | 必须 | 说明
 ---------- | ------- | ------- | ------
 access_token |String | 是 | 调用接口凭证
+user_id |String | 是 | 员工id
+customerid  |  客户id
+name  |  客户联系人名称
+mobile  |  客户联系人手机
+attached  |  客户联系人备注
+create_by  |  创建时间
 
 ##### 返回说明
-
-如果收件人、部门或标签不存在，发送仍然执行，但返回无效的部分。
 
 ```
 {
     "errcode": 0,
-    "errmsg": "ok",
-    "invaliduser": "UserID1|UserID2",
-    "invalidparty":"PartyID1"
+    "errmsg": "ok"
 }
 ```
+参数 | 说明
+---- | -----
+errcode | 返回码
+errmsg | 对返回码的文本描述内容
+
+## 员工修改客户联系人
+
+##### 请求说明
+
+Https请求方式: POST
+
+`https://oapi.dingtalk.com/crm/contact/create?access_token=ACCESS_TOKEN&user_id=USER_ID`
+
+##### 请求包结构体
+
+```
+{
+"contactid":"客户联系人id",
+"name":"客户联系人名称",
+"mobile":"客户联系人手机",
+"attached":"客户联系人备注",
+"modified_by":"修改时间"	  
+}
+
+```
+
+##### 参数说明
+
+参数 | 参数类型 | 必须 | 说明
+---------- | ------- | ------- | ------
+access_token |String | 是 | 调用接口凭证
+user_id |String | 是 | 员工id
+contactid |String | 是  |  客户id
+name |String | 是  |  客户联系人名称
+mobile  |String | 是 |  客户联系人手机
+attached |String | 是   |  客户联系人备注
+modified_by |String | 是   |  修改时间
+
+##### 返回说明
+
+```
+{
+    "errcode": 0,
+    "errmsg": "ok"
+}
+```
+参数 | 说明
+---- | -----
+errcode | 返回码
+errmsg | 对返回码的文本描述内容
+
+## 员工删除客户联系人
+
+##### 请求说明
+
+Https请求方式: POST
+
+`https://oapi.dingtalk.com/crm/contact/delete?access_token=ACCESS_TOKEN&user_id=USER_ID`
+
+##### 请求包结构体
+
+```
+{
+"contactid[]":"客户联系人id1"
+}
+
+```
+
+##### 参数说明
+
+参数 | 参数类型 | 必须 | 说明
+---------- | ------- | ------- | ------
+access_token |String | 是 | 调用接口凭证
+user_id |String | 是 | 员工id
+contactid  |String[] | 是  |  客户id
+##### 返回说明
+
+```
+{
+    "errcode": 0,
+    "errmsg": "ok"
+}
+```
+参数 | 说明
+---- | -----
+errcode | 返回码
+errmsg | 对返回码的文本描述内容
+
+## 员工客户关系新增
+
+##### 请求说明
+
+Https请求方式: POST
+
+`https://oapi.dingtalk.com/crm/empcustomer/create?access_token=ACCESS_TOKEN`
+
+##### 请求包结构体
+
+```
+{
+    "customerId":"客户id",
+    "userId":"员工id",
+    "create_by":"创建时间"
+}
+
+```
+
+##### 参数说明
+
+参数 | 参数类型 | 必须 | 说明
+---------- | ------- | ------- | ------
+access_token |String | 是 | 调用接口凭证
+customerId |String | 是 | 客户id
+userId  |String | 是  |  员工id
+create_by  |String | 是  |  创建时间
+
+##### 返回说明
+
+```
+{
+    "errcode": 0,
+    "errmsg": "ok"
+}
+```
+参数 | 说明
+---- | -----
+errcode | 返回码
+errmsg | 对返回码的文本描述内容
+
+## 员工客户关系删除
+
+##### 请求说明
+
+Https请求方式: POST
+
+`https://oapi.dingtalk.com/crm/empcustomer/delete?access_token=ACCESS_TOKEN`
+
+##### 请求包结构体
+
+```
+{
+"customerId":"客户id",
+"userId":"员工id",
+"modified_by":"修改时间"
+}
+
+```
+
+##### 参数说明
+
+参数 | 参数类型 | 必须 | 说明
+---------- | ------- | ------- | ------
+access_token |String | 是 | 调用接口凭证
+customerId |String | 是 | 客户id
+userId  |String | 是  |  员工id
+modified_by  |String | 是  |  修改时间
+
+##### 返回说明
+
+```
+{
+    "errcode": 0,
+    "errmsg": "ok"
+}
+```
+参数 | 说明
+---- | -----
+errcode | 返回码
+errmsg | 对返回码的文本描述内容
 
